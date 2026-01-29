@@ -1,0 +1,29 @@
+:root {
+  --typeface: "Roboto";
+}
+.Toastify__toast {
+  font-family: var(--typeface), sans-serif;
+  font-weight: 400;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.Toastify__toast--error {
+  background-color: #8d0000;
+  color: #ffffff;
+}
+
+.Toastify__toast--warning {
+  background-color: rgb(246, 148, 67);
+  color: #ffffff;
+}
+
+.Toastify__toast--success {
+  background-color: #005723;
+  color: #ffffff;
+}
+
+.Toastify__toast--info {
+  background-color: #004da3;
+  color: #ffffff;
+}
