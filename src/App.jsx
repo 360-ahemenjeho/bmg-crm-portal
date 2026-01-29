@@ -1,6 +1,6 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { DesignSystemPage } from "@/pages";
+import { AdminOverviewPage, DesignSystemPage } from "@/pages";
 import { useColor } from "@/contexts/color";
 import { useMemo } from "react";
 import { configureDashboardTheme } from "@/themes";
@@ -43,6 +43,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/design/system" element={<DesignSystemPage />} />
+          <Route path="/overview" element={<AdminOverviewPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

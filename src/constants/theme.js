@@ -10,7 +10,7 @@ export const fontSizes = {
 };
 
 export const typefaces = {
-  default: "Roboto",
+  default: "Inter",
 };
 
 export const buttonColors = {
@@ -394,7 +394,7 @@ export const buttonColors = {
 
 export const mainColors = {
   light: {
-    primary: "#1F66E5",
+    primary: "#2C3891",
     secondary: "#4B566A",
     success: "#28A745",
     warning: "#F7941D",
@@ -629,3 +629,5 @@ export const radiusTokens = {
 };
 
 export const inputHeight = "34px";
+export const dashboardNavHeight = "40px";
+export const dashboardSidebarWidth = "220px";
