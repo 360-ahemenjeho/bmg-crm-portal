@@ -12,17 +12,7 @@ export default function OrderInsight() {
           <Typography variant="h3" color="#63658F" fontWeight={700}>
             Orders Insight
           </Typography>
-          <Box
-            component="span"
-            sx={{
-              cursor: "pointer",
-              "& *": {
-                color: "#A2A5D6",
-              },
-            }}
-          >
-            <MoreHorizontalFilled fontSize={26} />
-          </Box>
+          <MoreHorizontalFilled fontSize={26} color="#A2A5D6" />
         </Stack>
         <Box
           display="grid"
