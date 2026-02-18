@@ -2,13 +2,20 @@ import { radius, spacing } from "@/constants/theme";
 import { Button as BaseButton } from "@mui/material";
 import { MoonLoader } from "react-spinners";
 
+/**
+ * @param {import("@mui/material").ButtonProps & {
+ *    startContent?: import("@mui/material").ButtonProps["startIcon"],
+ *    endContent?: import("@mui/material").ButtonProps["endIcon"],
+ *    round?: keyof radius,
+ * }} props
+ */
 export default function Button({
   children,
   color,
   startContent,
   endContent,
   loading = false,
-  round = "4",
+  round = 4,
   disabled,
   ...props
 }) {

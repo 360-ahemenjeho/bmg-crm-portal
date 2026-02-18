@@ -2,6 +2,13 @@ import { dashboardNavHeight, radius, spacing } from "@/constants/theme";
 import { useColor } from "@/contexts/color";
 import { Box } from "@mui/material";
 
+/** @typedef {import("@/types/global.d.js").NavItem} NavProps */
+
+/**
+ * @param {Object} props
+ * @param {boolean} props.active
+ * @param {NavProps} props.nav
+ */
 export default function Pill({ active, nav }) {
   const { fg, main } = useColor();
   return (
@@ -41,7 +48,7 @@ export default function Pill({ active, nav }) {
           },
         }}
       >
-        <nav.icon fontSize={16} style={{ display: "block" }} />
+        {nav.icon && <nav.icon fontSize={16} style={{ display: "block" }} />}
         <span style={{ lineHeight: 1 }}>{nav?.label}</span>
       </Box>
     </Box>

@@ -13,7 +13,7 @@ export default function Hero() {
     >
       <Box>
         <Typography variant="h1">👋 Good Morning, Jeho</Typography>
-        <Typography variant="body1" fg="secondary">
+        <Typography variant="body1" color="secondary">
           Wednesday, November 19, 2025
         </Typography>
       </Box>
@@ -23,7 +23,7 @@ export default function Hero() {
           size="large"
           startContent={<CircleSmallFilled />}
           endContent={<AddFilled />}
-          round="2"
+          round={2}
         >
           Add Admin
         </Button>
@@ -32,7 +32,7 @@ export default function Hero() {
           size="large"
           startContent={<CircleSmallFilled />}
           endContent={<AddFilled />}
-          round="2"
+          round={2}
         >
           Add Expert
         </Button>
@@ -41,7 +41,7 @@ export default function Hero() {
           size="large"
           startContent={<CircleSmallFilled />}
           endContent={<AddFilled />}
-          round="2"
+          round={2}
         >
           Add Services
         </Button>

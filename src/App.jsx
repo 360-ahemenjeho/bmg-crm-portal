@@ -6,37 +6,13 @@ import { useMemo } from "react";
 import { configureDashboardTheme } from "@/themes";
 
 function App() {
-  const {
-    bg,
-    fg,
-    border,
-    theme: mode,
-    scrollbar,
-    button,
-    input,
-    main,
-    menu,
-    menuItem,
-    status,
-  } = useColor();
+  const colors = useColor();
   const theme = useMemo(
     () =>
       configureDashboardTheme({
-        colors: {
-          bg,
-          fg,
-          border,
-          mode,
-          scrollbar,
-          button,
-          input,
-          main,
-          menu,
-          menuItem,
-          status,
-        },
+        colors,
       }),
-    [bg, fg, border, mode, scrollbar, button, input, main, menu, menuItem, status],
+    [colors],
   );
 
   return (
@@ -45,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/design/system" element={<DesignSystemPage />} />
-          <Route path="/overview" element={<AdminOverviewPage />} />
+          <Route path="/" element={<AdminOverviewPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

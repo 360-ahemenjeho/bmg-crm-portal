@@ -5,11 +5,24 @@ import { ArrowRightFilled } from "@fluentui/react-icons";
 import { Box, Button, Stack } from "@mui/material";
 import { Typography as BaseTypography } from "@mui/material";
 
+/** @typedef {import("@/types/color.d.js").ColorContextValue} ColorContextValueProps */
+
+/**
+ * @param {Object} props
+ * @param {keyof ColorContextValueProps["status"]} props.color
+ * @param {number} props.value
+ * @param {keyof radius} [props.round]
+ * @param {string} [props.label]
+ * @param {string} [props.secondaryLabel]
+ * @param {React.ComponentType<{fontSize: number, style: Record<string, any>}>} props.icon
+ * @param {boolean} [props.readOnly]
+ * @param {boolean} [props.coloredLabel]
+ */
 export default function SummaryCard({
   color = "primary",
-  value = 0,
-  round = "4",
-  label = "View More",
+  value,
+  round = 4,
+  label = "Details",
   secondaryLabel = "Total",
   icon: Icon,
   readOnly = false,
@@ -33,7 +46,7 @@ export default function SummaryCard({
       }}
     >
       <Stack alignItems="end">
-        <Typography variant="caption" textAlign="right" fontWeight={500}>
+        <Typography variant="caption" textAlign="right" fontWeight={500} color="secondary">
           {secondaryLabel}
         </Typography>
         <BaseTypography variant="h3" color={_color?.primary} textAlign="right" fontWeight={600}>

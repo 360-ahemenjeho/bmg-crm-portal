@@ -398,14 +398,14 @@ export const mainColors = {
     secondary: "#4B566A",
     success: "#28A745",
     warning: "#F7941D",
-    destructive: "#DC143C",
+    error: "#DC143C",
   },
   dark: {
     primary: "#6256B8",
     secondary: "#A1A3C3",
     success: "#28A745",
     warning: "#FFC107",
-    destructive: "#DC143C",
+    error: "#DC143C",
   },
 };
 

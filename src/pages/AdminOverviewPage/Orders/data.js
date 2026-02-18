@@ -1,10 +1,4 @@
-export const statusLabel = {
-  pending: "Pending",
-  processing: "Processing",
-  completed: "Completed",
-  cancelled: "Cancelled",
-};
-
+/** @type {Record<string, import("@mui/material").ChipProps["color"]>} */
 export const statusColor = {
   pending: "warning",
   processing: "info",

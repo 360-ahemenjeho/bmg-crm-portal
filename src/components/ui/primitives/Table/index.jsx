@@ -1,9 +1,12 @@
 import { Box, TableContainer, Table as TableRoot } from "@mui/material";
 
-export default function Table({ children, ...rest }) {
+/**
+ * @param {import("@mui/material").TableProps & {children: import("@mui/material").TableProps["children"] }} props
+ */
+export default function Table({ children, ...props }) {
   return (
     <TableContainer component={Box}>
-      <TableRoot {...rest}>{children}</TableRoot>
+      <TableRoot {...props}>{children}</TableRoot>
     </TableContainer>
   );
 }

@@ -10,8 +10,14 @@ import {
 import { ChevronDownFilled } from "@fluentui/react-icons";
 import { createTheme, responsiveFontSizes } from "@mui/material";
 
+/** @typedef {import("@/types/color.d.js").ColorContextValue} ColorContextValueProps */
+
+/**
+ * @param {Object} params
+ * @param {ColorContextValueProps} params.colors
+ */
 function configureTheme({
-  colors: { fg, bg, border, mode, scrollbar, button, input, main, menu, menuItem, status },
+  colors: { fg, bg, theme: mode, scrollbar, button, input, main, menu, menuItem, status },
 }) {
   const theme = createTheme({
     typography: {

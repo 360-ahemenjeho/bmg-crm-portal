@@ -1,4 +1,4 @@
-import { BarChart, InsightTag, PieChart } from "@/components/shared";
+import { BarChart, InsightTag } from "@/components/shared";
 import { Card } from "@/components/ui/primitives";
 import { spacingTokens } from "@/constants/theme";
 import { MoreHorizontalFilled } from "@fluentui/react-icons";
@@ -6,7 +6,7 @@ import { Box, CardContent, Stack, Typography } from "@mui/material";
 
 export default function Transactions() {
   return (
-    <Card round="8">
+    <Card round={8}>
       <Stack component={CardContent} gap={spacingTokens.md} padding={spacingTokens.lg}>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Typography variant="h3" color="#63658F" fontWeight={700}>

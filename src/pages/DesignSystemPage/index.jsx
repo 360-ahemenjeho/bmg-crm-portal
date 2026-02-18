@@ -6,6 +6,7 @@ import {
   Table,
   TableHead,
   TableBody,
+  Chip,
 } from "@/components/ui/primitives";
 import {
   AddFilled,
@@ -25,7 +26,6 @@ import {
   MenuItem,
   TableRow,
   TableCell,
-  Chip,
 } from "@mui/material";
 
 export default function DesignSystemPage() {
@@ -47,10 +47,10 @@ export default function DesignSystemPage() {
   return (
     <>
       <Typography variant="h1">Welcome, Ahemen Jeho</Typography>
-      <Typography fg="secondary" variant="h2">
+      <Typography color="secondary" variant="h2">
         Welcome, Ahemen Jeho
       </Typography>
-      <Typography fg="tertiary" variant="h3">
+      <Typography color="tertiary" variant="h3">
         Welcome, Ahemen Jeho
       </Typography>
       <Typography variant="body1">Welcome, Ahemen Jeho</Typography>
@@ -63,7 +63,7 @@ export default function DesignSystemPage() {
               <Button
                 loading={false}
                 color="secondary"
-                round="5"
+                round={5}
                 startContent={<CircleSmallFilled />}
                 endContent={<AddFilled />}
               >
@@ -106,13 +106,8 @@ export default function DesignSystemPage() {
       </Box>
 
       <Table>
-        <TableHead>{columns}</TableHead>
-        <TableBody
-          loading={false}
-          count={rows?.length}
-          span={columns.length}
-          onRefresh={() => null}
-        >
+        <TableHead columns={columns}></TableHead>
+        <TableBody loading={false} count={rows?.length} span={columns.length}>
           {rows.map((row) => (
             <TableRow key={row.id}>
               <TableCell>{row.id}</TableCell>

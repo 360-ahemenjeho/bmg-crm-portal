@@ -6,9 +6,15 @@ import NavLink from "./NavLink";
 import { useNavigationMenu } from "@/hooks/config/navigation";
 import { useLocation } from "react-router-dom";
 
+/**
+ * @param {Object} props
+ * @param {(width: number) => void} props.setWidth
+ */
 export default function Sidebar({ setWidth }) {
+  /** @type {React.RefObject<HTMLDivElement | null>} */
   const navRef = useRef(null);
   const menu = useNavigationMenu();
+
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -22,6 +28,7 @@ export default function Sidebar({ setWidth }) {
       <Stack display="flex" alignItems="center" justifyContent="center" height="80px">
         <Box component="img" height="30px" src="/logo-dark.png" />
       </Stack>
+
       <Box
         sx={{
           px: spacingTokens.md,
@@ -37,11 +44,15 @@ export default function Sidebar({ setWidth }) {
             key={index}
             nav={item}
             active={
-              item.path === pathname || item?.sub?.some((subItem) => subItem.path === pathname)
+              item.path === pathname ||
+              item?.sub?.some((subItem) => subItem.path === pathname) ||
+              false
             }
+            onNavigate={() => console.log("Opps!")}
           />
         ))}
       </Box>
+
       <Stack
         direction="row"
         display="flex"

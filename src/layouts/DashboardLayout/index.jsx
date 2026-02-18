@@ -5,6 +5,11 @@ import { spacingTokens } from "@/constants/theme";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 
+/**
+ * @param {Object} props
+ * @param {import("react").ReactNode} props.children
+ */
+
 export default function DashboardLayout({ children }) {
   const { border, bg } = useColor();
   const [mobileOpen, setMobileOpen] = useState(false);

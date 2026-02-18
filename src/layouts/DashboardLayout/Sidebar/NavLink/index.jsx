@@ -1,6 +1,14 @@
 import { radiusTokens, spacingTokens } from "@/constants/theme";
 import { Box } from "@mui/material";
 
+/** @typedef {import("@/types/global.d.js").NavItem} NavProps */
+
+/**
+ * @param {Object} props
+ * @param {NavProps} props.nav
+ * @param {() => void} props.onNavigate
+ * @param {boolean} props.active
+ */
 export default function NavLink({ nav, onNavigate, active }) {
   return (
     <Box

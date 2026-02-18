@@ -1,3 +1,12 @@
+/**
+ * @param {Object} props
+ * @param {Array<{value: number, color: string}>} props.data
+ * @param {number} props.total
+ * @param {number} [props.width]
+ * @param {number} [props.height]
+ * @param {number} [props.gap]
+ * @param {"start" | "center" | "end"} [props.align]
+ */
 export default function BarChart({
   data,
   total,

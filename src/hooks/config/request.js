@@ -5,17 +5,54 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { clearUser } from "@/store/slices/userSlice";
 
+/**
+ * @typedef {Object} RequestOptions
+ * @property {boolean} [abort=true]
+ * @property {string} [pin]
+ * @property {boolean} [logoutOnExpiry]
+ * @property {boolean} [redirectOnUnauth]
+ * @property {(error: unknown) => unknown} [onError]
+ * @property {() => void} [onFinally]
+ * @property {boolean} [rethrow]
+ */
+
+/**
+ * @template {(...args: any[]) => Promise<any>} T
+ * @typedef {((...args: Parameters<T>) => Promise<Awaited<ReturnType<T>> | undefined>) & { abort: () => void }} WrappedFn
+ */
+
+/**
+ * @typedef {Object} UseRequestReturn
+ * @property {<T extends (...args: any[]) => Promise<any>>(fn: T, options?: RequestOptions) => WrappedFn<T>} request
+ * @property {() => void} abortAll
+ * @property {() => void} cleanup
+ */
+
+/**
+ * @returns {UseRequestReturn}
+ */
 export const useRequest = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  /** @type {React.RefObject<Map<string, AbortController>>} */
   const controllersRef = useRef(new Map());
 
   const createWrapper = useCallback(
+    /**
+     * @template {(...args: any[]) => Promise<any>} T
+     * @param {T} fn
+     * @param {RequestOptions} [options]
+     * @returns {WrappedFn<T>}
+     */
     (fn, options = { abort: true }) => {
+      /** @type {number | null} */
       let interceptorId = null;
+
+      /** @type {AbortController | null} */
       let controller = null;
 
-      const wrapped = async (...args) => {
+      const wrapped = async (/** @type {Parameters<T>} */ ...args) => {
         const requestId = Math.random().toString(36);
 
         if (options.abort) {
@@ -24,13 +61,15 @@ export const useRequest = () => {
         }
 
         if (options.pin) {
-          interceptorId = apiReq.interceptors.request.use((config) => {
-            config.headers = {
-              ...config.headers,
-              "Account-Password": options.pin,
-            };
-            return config;
-          });
+          interceptorId = apiReq.interceptors.request.use(
+            (/** @type {Record<any, any>} */ config) => {
+              config.headers = {
+                ...config.headers,
+                "Account-Password": options.pin,
+              };
+              return config;
+            },
+          );
         }
 
         try {
@@ -38,8 +77,10 @@ export const useRequest = () => {
 
           const result = await fn(...enhancedArgs);
           return result;
-        } catch (error) {
-          console.error("api error -> ", error);
+        } catch (/** @type {any} */ error) {
+          console.error("api error -> ");
+          console.log(error);
+
           const errMsg = Array.isArray(error?.response?.data?.message)
             ? error?.response?.data?.message[0]
             : error?.response?.data?.message;

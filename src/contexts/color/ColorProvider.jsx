@@ -14,14 +14,21 @@ import {
 } from "@/constants/theme";
 import ColorContext from "./ColorContext";
 
+/**
+ * @param {Object} props
+ * @param {import("react").ReactNode} props.children
+ */
 export default function ColorProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem(THEME_KEY);
-      if (stored === "light" || stored === "dark") return stored;
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState(
+    /** @returns {"light" | "dark"} */
+    () => {
+      if (typeof window !== "undefined") {
+        const stored = localStorage.getItem(THEME_KEY);
+        if (stored === "light" || stored === "dark") return stored;
+      }
+      return "light";
+    },
+  );
 
   useEffect(() => {
     if (typeof window !== "undefined") {

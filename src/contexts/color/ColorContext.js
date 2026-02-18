@@ -1,4 +1,6 @@
 import { createContext } from "react";
 
-const ColorContext = createContext(undefined);
+/** @typedef {import("@/types/color.d.js").ColorContextValue} ColorContextValueProps */
+
+const ColorContext = createContext(/** @type {ColorContextValueProps | undefined} */ (undefined));
 export default ColorContext;

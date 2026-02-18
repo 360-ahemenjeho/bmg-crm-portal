@@ -1,12 +1,16 @@
 import { spacing } from "@/constants/theme";
-import { TableRow, TableHead as RootTableHead, TableCell, Stack, Typography } from "@mui/material";
+import { TableRow, TableHead as RootTableHead, TableCell, Stack } from "@mui/material";
 
-export default function TableHead({ children }) {
+/**
+ * @param {Object} props
+ * @param {Array<{label: string, align?: import("@mui/material").TableCellProps["align"], icon?: React.ComponentType<{ fontSize?: number, style?: Record<string, any> }>}>} props.columns
+ */
+export default function TableHead({ columns }) {
   return (
     <RootTableHead>
       <TableRow>
-        {children?.map((column, index) => (
-          <TableCell key={index} align={column.align}>
+        {columns?.map((column, index) => (
+          <TableCell key={index} align={column?.align || "left"}>
             <Stack
               gap={spacing[1]}
               direction="row"

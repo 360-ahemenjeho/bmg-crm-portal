@@ -1,3 +1,8 @@
+/**
+ * @param {Object} props
+ * @param {Array<{percent: number, color: string}>} props.data
+ * @param {number} props.size
+ */
 export default function PieChart({ data, size = 200 }) {
   const total = data.reduce((sum, item) => sum + item.percent, 0);
 

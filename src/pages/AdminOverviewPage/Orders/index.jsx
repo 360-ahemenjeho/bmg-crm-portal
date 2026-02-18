@@ -1,4 +1,4 @@
-import { Table, TableBody, TableHead } from "@/components/ui/primitives";
+import { Chip, Table, TableBody, TableHead } from "@/components/ui/primitives";
 import {
   CalendarClockRegular,
   CircleRegular,
@@ -9,8 +9,8 @@ import {
   PersonRegular,
   SquareRegular,
 } from "@fluentui/react-icons";
-import { Chip, TableCell, TableRow } from "@mui/material";
-import { statusColor, statusLabel } from "./data";
+import { TableCell, TableRow } from "@mui/material";
+import { statusColor } from "./data";
 
 const orders = [
   {
@@ -83,13 +83,8 @@ const columns = [
 export default function Orders() {
   return (
     <Table>
-      <TableHead>{columns}</TableHead>
-      <TableBody
-        loading={false}
-        count={orders?.length}
-        span={columns.length}
-        onRefresh={() => null}
-      >
+      <TableHead columns={columns}></TableHead>
+      <TableBody loading={false} count={orders?.length} span={columns.length}>
         {orders.map((row) => (
           <TableRow key={row.id}>
             <TableCell>
@@ -103,7 +98,7 @@ export default function Orders() {
             <TableCell>{row.expert}</TableCell>
             <TableCell>
               <Chip
-                label={statusLabel[row.status]}
+                label={row.status}
                 color={statusColor[row.status]}
                 icon={<CircleSmallFilled />}
               />

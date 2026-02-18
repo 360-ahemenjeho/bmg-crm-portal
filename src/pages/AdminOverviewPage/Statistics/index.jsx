@@ -9,7 +9,6 @@ import {
   PeopleRegular,
   ShieldTaskRegular,
   ShoppingBagRegular,
-  TextColorRegular,
   TextContinuousRegular,
   ToolboxRegular,
 } from "@fluentui/react-icons";

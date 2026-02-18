@@ -2,6 +2,14 @@ import { spacingTokens } from "@/constants/theme";
 import { useColor } from "@/contexts/color";
 import { Box, Stack, Typography } from "@mui/material";
 
+/** @typedef {import("@/types/color.d.js").ColorContextValue} ColorContextValueProps */
+
+/**
+ * @param {Object} props
+ * @param {keyof ColorContextValueProps["status"]} props.color
+ * @param {string} props.label
+ * @param {string | number} props.value
+ */
 export default function InsightTag({ color = "success", label = "Label", value = "100" }) {
   const { status } = useColor();
 

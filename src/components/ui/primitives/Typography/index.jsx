@@ -1,20 +1,19 @@
 import { useColor } from "@/contexts/color";
 import { Typography as BaseTypography } from "@mui/material";
 
-export default function Typography({ children, fg, ...props }) {
-  const { fg: _fg } = useColor();
+/** @typedef {import("@/types/color.d.js").ColorContextValue} ColorContextValueProps */
 
-  const fgColor = {
-    primary: _fg.primary,
-    secondary: _fg.secondary,
-    tertiary: _fg.tertiary,
-  };
+/**
+ * @param {Omit<import("@mui/material").TypographyProps, "color"> & {color?: keyof ColorContextValueProps["fg"]}} props
+ */
+export default function Typography({ children, color = "primary", ...props }) {
+  const { fg } = useColor();
 
   return (
     <BaseTypography
       {...props}
       sx={{
-        color: fgColor[fg],
+        color: fg[color],
       }}
     >
       {children}

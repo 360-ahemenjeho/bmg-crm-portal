@@ -6,6 +6,10 @@ import Avatar from "./Avatar";
 import Notification from "./Notification";
 import QuickNavigation from "./QuickNavigation";
 
+/**
+ * @param {*} param0
+ * @returns
+ */
 export default function Navbar({ onToggle }) {
   const { bg, border } = useColor();
   const theme = useTheme();

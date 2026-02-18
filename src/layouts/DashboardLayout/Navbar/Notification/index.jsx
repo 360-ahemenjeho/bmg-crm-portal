@@ -2,7 +2,11 @@ import { useColor } from "@/contexts/color";
 import { AlertRegular } from "@fluentui/react-icons";
 import { Box } from "@mui/material";
 
-export default function Notification({ count = 7 }) {
+/**
+ * @param {Object} props
+ * @param {number} [props.count]
+ */
+export default function Notification({ count = 5 }) {
   const { main } = useColor();
   return (
     <Box sx={{ position: "relative" }}>
