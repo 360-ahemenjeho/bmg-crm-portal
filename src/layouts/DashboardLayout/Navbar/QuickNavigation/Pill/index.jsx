@@ -10,7 +10,7 @@ import { Box } from "@mui/material";
  * @param {NavProps} props.nav
  */
 export default function Pill({ active, nav }) {
-  const { fg, main } = useColor();
+  const { fg, main, shadow, elevate } = useColor();
   return (
     <Box
       sx={{
@@ -33,8 +33,8 @@ export default function Pill({ active, nav }) {
     >
       <Box
         sx={{
-          backgroundColor: "#EDEDED",
-          boxShadow: "1px 1px 1px rgba(0, 0, 0, 0.25)",
+          backgroundColor: elevate.primary,
+          boxShadow: shadow.default,
           borderRadius: radius[2],
           padding: "2px 6px",
           fontSize: "10px",

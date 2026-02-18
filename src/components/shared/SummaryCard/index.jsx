@@ -45,11 +45,17 @@ export default function SummaryCard({
         position: "relative",
       }}
     >
-      <Stack alignItems="end">
+      <Stack alignItems="end" gap={spacingTokens.sm}>
         <Typography variant="caption" textAlign="right" fontWeight={500} color="secondary">
           {secondaryLabel}
         </Typography>
-        <BaseTypography variant="h3" color={_color?.primary} textAlign="right" fontWeight={600}>
+        <BaseTypography
+          variant="h3"
+          color={_color?.primary}
+          textAlign="right"
+          fontWeight={600}
+          lineHeight={1}
+        >
           {value}
         </BaseTypography>
       </Stack>
@@ -59,7 +65,6 @@ export default function SummaryCard({
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <BaseTypography
           color={coloredLabel ? _color?.primary : fg.primary}
-          variant="caption"
           fontWeight={coloredLabel ? 700 : 500}
         >
           {label}
