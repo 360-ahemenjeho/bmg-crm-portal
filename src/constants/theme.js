@@ -437,7 +437,7 @@ export const borderColors = {
 
 export const foregroundColors = {
   light: {
-    primary: "#000000",
+    primary: "#110c1d",
     secondary: "#76778b",
     tertiary: "#b2b4c7",
   },
@@ -691,5 +691,23 @@ export const statusColors = {
       primary: "#7DBBFF",
       secondary: "#EFF0F0",
     },
+  },
+};
+
+export const elevateColors = {
+  light: {
+    primary: "#EFF0F0",
+  },
+  dark: {
+    primary: "#EFF0F0",
+  },
+};
+
+export const shadowColors = {
+  light: {
+    default: "1px 1px 1px rgba(0, 0, 0, 0.15)",
+  },
+  dark: {
+    default: "1px 1px 1px rgba(0, 0, 0, 0.15)",
   },
 };

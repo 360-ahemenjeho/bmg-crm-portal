@@ -9,6 +9,8 @@ import {
   menuColors,
   menuItemColors,
   statusColors,
+  elevateColors,
+  shadowColors,
 } from "@/constants/theme";
 
 /**
@@ -25,6 +27,8 @@ import {
  * @property {typeof menuColors["light"]} menu
  * @property {typeof menuItemColors["light"]} menuItem
  * @property {typeof statusColors["light"]} status
+ * @property {typeof elevateColors["light"]} elevate
+ * @property {typeof shadowColors["light"]} shadow
  */
 
 export {};

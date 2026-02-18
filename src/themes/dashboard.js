@@ -17,7 +17,20 @@ import { createTheme, responsiveFontSizes } from "@mui/material";
  * @param {ColorContextValueProps} params.colors
  */
 function configureTheme({
-  colors: { fg, bg, theme: mode, scrollbar, button, input, main, menu, menuItem, status },
+  colors: {
+    fg,
+    bg,
+    theme: mode,
+    scrollbar,
+    button,
+    input,
+    main,
+    menu,
+    menuItem,
+    status,
+    shadow,
+    border,
+  },
 }) {
   const theme = createTheme({
     typography: {
@@ -61,7 +74,6 @@ function configureTheme({
             fontSize: "0.8125rem",
             backgroundColor: bg.primary,
             "& *": {
-              color: fg.primary,
               fontFamily: typefaces.default,
               "::-webkit-scrollbar": {
                 width: "6px",
@@ -79,22 +91,23 @@ function configureTheme({
                 display: "none",
               },
             },
+            color: fg.primary,
           },
           body: {
             margin: 0,
             padding: 0,
             backgroundColor: bg.primary,
             "& *": {
-              color: fg.primary,
               fontFamily: typefaces.default,
             },
+            color: fg.primary,
           },
         },
       },
       MuiButton: {
         styleOverrides: {
           root: {
-            boxShadow: "none !important",
+            boxShadow: "none",
             whiteSpace: "nowrap",
             outline: "none",
             textTransform: "unset",
@@ -165,7 +178,7 @@ function configureTheme({
               borderColor: button["secondary"]["default"]["border"]["normal"],
               backgroundColor: button["secondary"]["default"]["bg"]["normal"],
               color: button["secondary"]["default"]["fg"]["normal"],
-              boxShadow: "1px 1px 1px rgba(0, 0, 0, 0.25) !important",
+              boxShadow: shadow.default,
               "&:hover": {
                 borderColor: button["secondary"]["default"]["border"]["hover"],
                 backgroundColor: button["secondary"]["default"]["bg"]["hover"],
@@ -430,9 +443,9 @@ function configureTheme({
         styleOverrides: {
           root: {
             backgroundColor: bg.tertiary,
-            boxShadow: "1px 1px 1px rgba(0, 0, 0, 0.25) !important",
+            boxShadow: shadow.default,
             "&.MuiPaper-outlined": {
-              border: "1px solid #E5E5E5",
+              border: `1px solid ${border.primary}`,
               boxShadow: "none !important",
             },
           },
@@ -603,7 +616,7 @@ function configureTheme({
             width: "fit-content",
             height: "21px",
             fontWeight: 500,
-            boxShadow: "1px 1px 1px rgba(0, 0, 0, 0.25)",
+            boxShadow: shadow.default,
             fontSize: "13px",
             borderRadius: spacingTokens.xs,
             "& .MuiChip-icon": {

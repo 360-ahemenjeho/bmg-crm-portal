@@ -11,6 +11,8 @@ import {
   menuColors,
   menuItemColors,
   statusColors,
+  elevateColors,
+  shadowColors,
 } from "@/constants/theme";
 import ColorContext from "./ColorContext";
 
@@ -51,6 +53,8 @@ export default function ColorProvider({ children }) {
     menu: menuColors[theme],
     menuItem: menuItemColors[theme],
     status: statusColors[theme],
+    elevate: elevateColors[theme],
+    shadow: shadowColors[theme],
   };
 
   return <ColorContext.Provider value={value}>{children}</ColorContext.Provider>;
