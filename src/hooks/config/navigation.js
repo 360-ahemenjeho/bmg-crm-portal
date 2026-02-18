@@ -1,14 +1,21 @@
 import {
+  DataPieRegular,
   DiversityRegular,
+  FormRegular,
   GlanceRegular,
   PeopleRegular,
+  PeopleTeamRegular,
+  ProjectionScreenTextSparkleRegular,
   SettingsRegular,
+  TargetArrowRegular,
+  TextBulletListSquareRegular,
+  WrenchSettingsRegular,
 } from "@fluentui/react-icons";
 
 /** @typedef {import("@/types/global.d.js").NavItem} NavItemProps */
 
 export function useNavigationMenu() {
-  const role = "admin";
+  const role = "customer";
 
   /**
    * @type {{
@@ -18,7 +25,7 @@ export function useNavigationMenu() {
    */
   const menu = {
     admin: [
-      { label: "Overview", path: "/overview", icon: GlanceRegular },
+      { label: "Overview", path: "/", icon: GlanceRegular },
       { label: "Users", path: "/users", icon: PeopleRegular },
       {
         label: "Category",
@@ -30,6 +37,29 @@ export function useNavigationMenu() {
         ],
       },
       { label: "Settings", path: "/settings", icon: SettingsRegular },
+    ],
+    customer: [
+      { label: "Overview", path: "/", icon: GlanceRegular },
+      { label: "Tasks", path: "/tasks", icon: TextBulletListSquareRegular },
+      {
+        label: "CRM",
+        path: "",
+        icon: PeopleTeamRegular,
+        color: "#05970F",
+      },
+      { label: "Sales", path: "/crm", icon: DataPieRegular, color: "#0A62C7" },
+      {
+        label: "Projects",
+        path: "/projects",
+        icon: ProjectionScreenTextSparkleRegular,
+        color: "#FF0004",
+        sub: [
+          { label: "Goals", path: "/goals", icon: TargetArrowRegular },
+          { label: "Schecule", path: "/schedule", icon: DiversityRegular },
+        ],
+      },
+      { label: "Forms", color: "#3B009D", path: "/forms", icon: FormRegular },
+      { label: "Automation", color: "#F1592A", path: "/automation", icon: WrenchSettingsRegular },
     ],
   };
 

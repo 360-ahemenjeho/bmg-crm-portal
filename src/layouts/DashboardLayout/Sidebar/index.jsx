@@ -1,10 +1,12 @@
 import { Box, Stack } from "@mui/material";
 import { SignOutRegular } from "@fluentui/react-icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { spacingTokens } from "@/constants/theme";
 import NavLink from "./NavLink";
 import { useNavigationMenu } from "@/hooks/config/navigation";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
+/** @typedef {import("@/types/global.d").NavItem} NavItemProps */
 
 /**
  * @param {Object} props
@@ -13,15 +15,37 @@ import { useLocation } from "react-router-dom";
 export default function Sidebar({ setWidth }) {
   /** @type {React.RefObject<HTMLDivElement | null>} */
   const navRef = useRef(null);
-  const menu = useNavigationMenu();
-
-  const { pathname } = useLocation();
 
   useEffect(() => {
     if (navRef.current) {
       setWidth(navRef.current.offsetWidth);
     }
   }, [setWidth]);
+
+  const menu = useNavigationMenu();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const [selected, setSelected] = useState(/** @type {number | null} */ (null));
+
+  /**
+   * @param {NavItemProps} item
+   * @param {number} index
+   */
+  function handleNavigation(item, index) {
+    if (item?.sub && item?.sub?.length > 0) {
+      setSelected((current) => (current === index ? null : index));
+      return;
+    }
+    if (!item?.path) return;
+    navigate(item?.path);
+  }
+
+  /** @param {NavItemProps} item */
+  function handleSubNavigatiion(item) {
+    if (!item?.path) return;
+    navigate(item?.path);
+  }
 
   return (
     <Box ref={navRef} sx={{ height: "100vh" }}>
@@ -40,16 +64,37 @@ export default function Sidebar({ setWidth }) {
         }}
       >
         {menu.map((item, index) => (
-          <NavLink
-            key={index}
-            nav={item}
-            active={
-              item.path === pathname ||
-              item?.sub?.some((subItem) => subItem.path === pathname) ||
-              false
-            }
-            onNavigate={() => console.log("Opps!")}
-          />
+          <Stack key={index} gap={spacingTokens.sm}>
+            <NavLink
+              nav={item}
+              active={
+                item.path === pathname ||
+                item?.sub?.some((subItem) => subItem.path === pathname) ||
+                false
+              }
+              onNavigate={() => handleNavigation(item, index)}
+              subNavOpen={selected === index}
+            />
+
+            <Stack
+              gap={spacingTokens.sm}
+              sx={{
+                maxHeight: selected === index ? "500px" : "0px",
+                overflow: "auto",
+                transition: "max-height 0.35s ease-in-out",
+              }}
+            >
+              {item?.sub?.map((subItem, subIndex) => (
+                <NavLink
+                  key={subIndex}
+                  nav={subItem}
+                  active={subItem.path === pathname}
+                  onNavigate={() => handleSubNavigatiion(subItem)}
+                  x={spacingTokens.md}
+                />
+              ))}
+            </Stack>
+          </Stack>
         ))}
       </Box>
 
