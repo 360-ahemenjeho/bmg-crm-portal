@@ -79,7 +79,7 @@ export const useRequest = () => {
           return result;
         } catch (/** @type {any} */ error) {
           console.error("api error -> ");
-          console.log(error);
+          console.error(error);
 
           const errMsg = Array.isArray(error?.response?.data?.message)
             ? error?.response?.data?.message[0]
