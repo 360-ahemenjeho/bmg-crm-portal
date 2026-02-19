@@ -6,3 +6,5 @@ export { default as Table } from "./Table";
 export { default as TableBody } from "./TableBody";
 export { default as TableHead } from "./TableHead";
 export { default as Chip } from "./Chip";
+export { default as Tabs } from "./Tabs";
+export { default as Tab } from "./Tab";
