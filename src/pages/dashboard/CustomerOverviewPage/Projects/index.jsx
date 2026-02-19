@@ -68,14 +68,14 @@ const rows = [
 const columns = [
   { label: "", icon: SquareRegular },
   { label: "ID" },
-  { label: "Task", icon: DocumentRegular },
+  { label: "Project", icon: DocumentRegular },
   { label: "Status", icon: CircleRegular },
   { label: "Due Date", icon: CalendarDateRegular },
   { label: "Linked", icon: DocumentLinkRegular },
   { label: "Action", icon: CircleRegular },
 ];
 
-export default function Tasks() {
+export default function Projects() {
   return (
     <Table>
       <TableHead columns={columns}></TableHead>

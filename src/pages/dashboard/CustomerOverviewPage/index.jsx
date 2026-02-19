@@ -3,7 +3,7 @@ import { Stack } from "@mui/material";
 import Hero from "./Hero";
 import Shortcuts from "./Shortcuts";
 import Insights from "./Insights";
-import Tasks from "./Tasks";
+import Projects from "./Projects";
 
 export default function CustomerOverviewPage() {
   return (
@@ -11,7 +11,7 @@ export default function CustomerOverviewPage() {
       <Hero></Hero>
       <Shortcuts></Shortcuts>
       <Insights></Insights>
-      <Tasks></Tasks>
+      <Projects></Projects>
     </Stack>
   );
 }
