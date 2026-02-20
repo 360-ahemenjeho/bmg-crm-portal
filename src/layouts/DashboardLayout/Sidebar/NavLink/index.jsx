@@ -67,7 +67,7 @@ export default function NavLink({
       </Box>
       {nav?.sub && nav?.sub?.length > 0 && (
         <Stack alignItems="center" justifyContent="center" component="div" className="indicator">
-          <ChevronLeftFilled fontSize={18}></ChevronLeftFilled>
+          <ChevronLeftFilled fontSize={14}></ChevronLeftFilled>
         </Stack>
       )}
     </Box>

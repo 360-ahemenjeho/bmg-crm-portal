@@ -60,7 +60,6 @@ export default function Sidebar({ setWidth }) {
           overflowY: "auto",
           display: "flex",
           flexDirection: "column",
-          gap: spacingTokens.sm,
         }}
       >
         {menu.map((item, index) => (
