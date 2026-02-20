@@ -58,7 +58,7 @@ export default function NavLink({
     >
       <Stack alignItems="center" justifyContent="center">
         <nav.icon
-          fontSize={26}
+          fontSize={22}
           style={{ display: "block", color: nav?.color ? nav.color : fg.primary }}
         ></nav.icon>
       </Stack>

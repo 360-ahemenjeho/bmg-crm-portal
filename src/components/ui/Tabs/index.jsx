@@ -1,4 +1,4 @@
-import { radiusTokens, spacingTokens } from "@/constants/theme";
+import { radius, spacingTokens } from "@/constants/theme";
 import { useColor } from "@/contexts/color";
 import { Box } from "@mui/material";
 
@@ -8,8 +8,9 @@ import { Box } from "@mui/material";
  * @param {number} props.active
  * @param {(key: number) => void} props.onChange
  * @param {import("react").ReactNode} props.children
+ * @param {keyof radius} [props.round]
  */
-export default function Tabs({ children, tabs, active, onChange }) {
+export default function Tabs({ children, tabs, active, onChange, round = 4 }) {
   const { border, elevate, fg, main } = useColor();
 
   return (
@@ -19,7 +20,7 @@ export default function Tabs({ children, tabs, active, onChange }) {
           overflowX: "auto",
           display: "flex",
           border: `1px solid ${border.primary}`,
-          borderRadius: radiusTokens.md,
+          borderRadius: radius[round],
         }}
       >
         {tabs.map((item, index) => {

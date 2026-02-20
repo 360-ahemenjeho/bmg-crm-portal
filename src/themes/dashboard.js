@@ -568,7 +568,7 @@ function configureTheme({
       MuiTableCell: {
         styleOverrides: {
           root: {
-            borderBottom: `1px solid ${mode === "light" ? "rgba(0,0,0,0.12)" : "rgba(220,220,255,0.12)"}`,
+            borderBottom: `1px solid ${mode === "light" ? "rgba(0,0,0,0.1)" : "rgba(220,220,255,0.1)"}`,
             whiteSpace: "nowrap",
             padding: `6px ${spacing[3]}`,
           },
@@ -578,11 +578,10 @@ function configureTheme({
             fontSize: "12px",
             whiteSpace: "nowrap",
             fontWeight: 400,
-            backgroundColor: mode == "light" ? "#8B9AAF" : "#8F8D8D33",
-            borderBottom: "none",
+            borderBottom: `2px solid ${mode === "light" ? "rgba(0,0,0,0.03)" : "rgba(220,220,255,0.03)"}`,
             color: "#FFFFFF",
             "& *": {
-              color: "#FFFFFF !important",
+              color: `${fg.secondary} !important`,
             },
           },
           body: {
@@ -696,13 +695,13 @@ function configureTheme({
             },
 
             // NEUTRAL
-            [`&.MuiChip-colorNeutral`]: {
+            [`&.MuiChip-colorDefault`]: {
               backgroundColor: status.neutral.primary,
               "& *": {
                 color: "#ffffff",
               },
             },
-            [`&.MuiChip-colorNeutral.MuiChip-outlined`]: {
+            [`&.MuiChip-colorDefault.MuiChip-outlined`]: {
               backgroundColor: status.neutral.secondary,
               "& *": {
                 color: status.neutral.primary,

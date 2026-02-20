@@ -1,5 +1,5 @@
 import { Box, Stack } from "@mui/material";
-import { SignOutRegular } from "@fluentui/react-icons";
+import { ArrowExitFilled } from "@fluentui/react-icons";
 import { useEffect, useRef, useState } from "react";
 import { spacingTokens } from "@/constants/theme";
 import NavLink from "./NavLink";
@@ -106,7 +106,7 @@ export default function Sidebar({ setWidth }) {
         height="40px"
         px={spacingTokens.sm}
       >
-        <SignOutRegular fontSize={20} style={{ cursor: "pointer" }}></SignOutRegular>
+        <ArrowExitFilled fontSize={20} style={{ cursor: "pointer" }}></ArrowExitFilled>
       </Stack>
     </Box>
   );

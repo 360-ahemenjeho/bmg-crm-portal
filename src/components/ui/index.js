@@ -8,3 +8,5 @@ export { default as TableHead } from "./TableHead";
 export { default as Chip } from "./Chip";
 export { default as Tabs } from "./Tabs";
 export { default as Tab } from "./Tab";
+export { default as Checkbox } from "./Checkbox";
+export { default as Avatar } from "./Avatar";

@@ -1,5 +1,5 @@
 import { ActionButton } from "@/components/shared";
-import { Chip, Table, TableBody, TableHead } from "@/components/ui";
+import { Checkbox, Chip, Table, TableBody, TableHead } from "@/components/ui";
 import { TASK_STATUS_VARIANT } from "@/constants/lib";
 import { spacingTokens } from "@/constants/theme";
 import { formatDueDate } from "@/helpers/date";
@@ -82,7 +82,9 @@ export default function Projects() {
       <TableBody loading={false} count={rows?.length} span={columns.length}>
         {rows.map((row) => (
           <TableRow key={row.id}>
-            <TableCell>-</TableCell>
+            <TableCell>
+              <Checkbox></Checkbox>
+            </TableCell>
             <TableCell>{row.id}</TableCell>
             <TableCell>{row.subject}</TableCell>
             <TableCell>
@@ -90,6 +92,7 @@ export default function Projects() {
                 icon={<CircleSmallFilled />}
                 label={row.status}
                 color={TASK_STATUS_VARIANT[row.status]}
+                variant="outlined"
               />
             </TableCell>
             <TableCell>{formatDueDate(row.due_date)}</TableCell>

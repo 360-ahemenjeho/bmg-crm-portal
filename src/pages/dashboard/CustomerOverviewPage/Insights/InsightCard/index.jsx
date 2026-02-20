@@ -1,6 +1,6 @@
 import { HorizontalBar } from "@/components/shared";
 import { Card, Typography } from "@/components/ui";
-import { fontSizes, spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/constants/theme";
 import { ArrowTrendingDownRegular, ArrowTrendingRegular } from "@fluentui/react-icons";
 import { CardContent, Stack } from "@mui/material";
 
@@ -28,7 +28,7 @@ export default function InsightCard({ label, subLabel, value, total, trend, colo
         <Stack gap={spacingTokens.md}>
           <Stack direction="row" alignItems="start" justifyContent="space-between">
             <Stack gap={spacingTokens.sm}>
-              <Typography variant="h3" fontWeight={600} lineHeight={1}>
+              <Typography fontWeight={500} lineHeight={1}>
                 {label}
               </Typography>
               <Typography color="secondary" lineHeight={1}>
@@ -36,7 +36,7 @@ export default function InsightCard({ label, subLabel, value, total, trend, colo
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="start" gap={spacingTokens.xs}>
-              <Typography fontSize={fontSizes.h2} fontWeight={600} lineHeight={1}>
+              <Typography variant="h3" fontWeight={400} lineHeight={1}>
                 {((value / total) * 100).toFixed(2)}
               </Typography>
               {Icon && <Icon fontSize={18} color={iconColor[trend]}></Icon>}

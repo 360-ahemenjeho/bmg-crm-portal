@@ -4,9 +4,9 @@ export const fontSizes = {
   h1: "25px",
   h2: "20.96px",
   h3: "16px",
-  caption: "11px",
-  body1: "13px",
-  body2: "13px",
+  caption: "12px",
+  body1: "14px",
+  body2: "14px",
 };
 
 export const typefaces = {
@@ -440,11 +440,13 @@ export const foregroundColors = {
     primary: "#171717",
     secondary: "#737373",
     tertiary: "#9fa2b5",
+    "main-primary": mainColors.light.primary,
   },
   dark: {
     primary: "#000000",
     secondary: "#63658F",
     tertiary: "#A1A3C3",
+    "main-primary": mainColors.dark.primary,
   },
 };
 
