@@ -575,7 +575,7 @@ function configureTheme({
           head: {
             padding: `8px ${spacing[3]}`,
             lineHeight: 1,
-            fontSize: "12px",
+            fontSize: fontSizes.caption,
             whiteSpace: "nowrap",
             fontWeight: 400,
             borderBottom: `2px solid ${mode === "light" ? "rgba(0,0,0,0.03)" : "rgba(220,220,255,0.03)"}`,

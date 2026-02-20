@@ -4,7 +4,7 @@ export const fontSizes = {
   h1: "25px",
   h2: "20.96px",
   h3: "16px",
-  caption: "12px",
+  caption: "13px",
   body1: "14px",
   body2: "14px",
 };
@@ -598,6 +598,14 @@ export const spacing = {
   10: "40px",
 };
 
+export const spacingTokens = {
+  xs: spacing[1],
+  sm: spacing[2],
+  md: spacing[4],
+  lg: spacing[6],
+  xl: spacing[8],
+};
+
 export const radius = {
   0: "0px",
   1: "2px",
@@ -615,19 +623,15 @@ export const radius = {
   full: "9999px",
 };
 
-export const spacingTokens = {
-  xs: spacing[1],
-  sm: spacing[2],
-  md: spacing[4],
-  lg: spacing[6],
-  xl: spacing[8],
-};
-
 export const radiusTokens = {
   sm: radius[2],
   md: radius[4],
   lg: radius[6],
   xl: radius[8],
+  "2xl": radius[9],
+  "3xl": radius[10],
+  "4xl": radius[11],
+  "5xl": radius[12],
 };
 
 export const inputHeight = "34px";

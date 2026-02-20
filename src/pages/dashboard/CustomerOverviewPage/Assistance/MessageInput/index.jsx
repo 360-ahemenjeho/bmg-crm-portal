@@ -13,9 +13,8 @@ export default function MessageInput() {
         alignItems: "center",
         justifyContent: "space-between",
         backgroundColor: "#ffffff",
-        border: "1px solid #0000002d",
-        borderRadius: radiusTokens.xl,
-        py: spacingTokens.sm,
+        borderRadius: radiusTokens.lg,
+        py: spacingTokens.xs,
         px: spacingTokens.sm,
       }}
     >
@@ -30,7 +29,7 @@ export default function MessageInput() {
           fontFamily: typefaces.default,
           px: spacingTokens.sm,
           "&::placeholder": {
-            color: fg.tertiary,
+            color: fg.secondary,
           },
         }}
       />

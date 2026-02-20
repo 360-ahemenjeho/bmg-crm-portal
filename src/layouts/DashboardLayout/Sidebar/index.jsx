@@ -50,11 +50,11 @@ export default function Sidebar() {
           overflowY: "auto",
           display: "flex",
           flexDirection: "column",
-          gap: spacingTokens.sm,
+          gap: spacingTokens.xs,
         }}
       >
         {menu.map((item, index) => (
-          <Stack key={index} gap={spacingTokens.sm}>
+          <Stack key={index} gap={spacingTokens.xs}>
             <NavLink
               nav={item}
               active={
@@ -66,24 +66,26 @@ export default function Sidebar() {
               subNavOpen={selected === index}
             ></NavLink>
 
-            <Stack
-              gap={spacingTokens.sm}
-              sx={{
-                maxHeight: selected === index ? "500px" : "0px",
-                overflow: "hidden",
-                transition: "max-height 0.35s ease-in-out",
-              }}
-            >
-              {item?.sub?.map((subItem, subIndex) => (
-                <NavLink
-                  key={subIndex}
-                  nav={subItem}
-                  active={subItem.path === pathname}
-                  onNavigate={() => handleSubNavigatiion(subItem)}
-                  x={spacingTokens.md}
-                ></NavLink>
-              ))}
-            </Stack>
+            {item?.sub && item?.sub?.length > 0 && (
+              <Stack
+                gap={spacingTokens.sm}
+                sx={{
+                  maxHeight: selected === index ? "500px" : "0px",
+                  overflow: "hidden",
+                  transition: "max-height 0.35s ease-in-out",
+                }}
+              >
+                {item?.sub?.map((subItem, subIndex) => (
+                  <NavLink
+                    key={subIndex}
+                    nav={subItem}
+                    active={subItem.path === pathname}
+                    onNavigate={() => handleSubNavigatiion(subItem)}
+                    x={spacingTokens.md}
+                  ></NavLink>
+                ))}
+              </Stack>
+            )}
           </Stack>
         ))}
       </Box>

@@ -23,20 +23,25 @@ export default function Assistance() {
       gap={spacingTokens.lg}
       sx={{
         backgroundColor: "#7DBBFF",
-        borderRadius: radiusTokens.xl,
+        borderRadius: radiusTokens["5xl"],
         px: spacingTokens.md,
         py: spacingTokens.lg,
       }}
     >
-      <Stack alignItems="center" justifyContent="center">
-        <Typography textAlign="center" variant="h3" fontWeight={400}>
-          Hi, Jeho 😃
+      <Stack alignItems="center" justifyContent="center" gap={spacingTokens.sm}>
+        <Typography
+          textAlign="center"
+          fontWeight={500}
+          lineHeight={1}
+          sx={{ color: "#20289f !important" }}
+        >
+          Hi Jeho 🥳
         </Typography>
-        <Typography textAlign="center" variant="h1" fontWeight={600}>
-          How can we help you?
+        <Typography textAlign="center" variant="h3" lineHeight={1} fontWeight={600}>
+          Let's Assist You!
         </Typography>
       </Stack>
-      <Box display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={spacingTokens.sm}>
+      <Box display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={spacingTokens.md}>
         {suggestions.map((item, index) => (
           <Suggestion key={index} {...item} />
         ))}

@@ -9,7 +9,7 @@ export default function Agenda() {
       gap={spacingTokens.lg}
       sx={{
         backgroundColor: "#FFC64B",
-        borderRadius: radiusTokens.xl,
+        borderRadius: radiusTokens["5xl"],
         px: spacingTokens.md,
         py: spacingTokens.lg,
       }}

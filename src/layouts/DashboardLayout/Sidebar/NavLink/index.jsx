@@ -18,11 +18,11 @@ export default function NavLink({
   nav,
   onNavigate,
   active,
-  y = "4px",
+  y = "6px",
   x = spacing[3],
   subNavOpen = false,
 }) {
-  const { elevate, shadow, fg, main } = useColor();
+  const { elevate, shadow, fg } = useColor();
 
   return (
     <Box
@@ -49,7 +49,7 @@ export default function NavLink({
         },
         "&:hover": {
           backgroundColor: elevate.primary,
-          color: main.primary,
+          color: fg.primary,
           "& .indicator": {
             transform: "translateY(-50%) rotate(180deg)",
           },
@@ -67,7 +67,7 @@ export default function NavLink({
     >
       <Stack alignItems="center" justifyContent="center">
         <nav.icon
-          fontSize={22}
+          fontSize={20}
           style={{ display: "block", color: nav?.color ? nav.color : fg.primary }}
         ></nav.icon>
       </Stack>

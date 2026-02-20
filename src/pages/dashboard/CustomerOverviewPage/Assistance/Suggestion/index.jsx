@@ -13,13 +13,13 @@ export default function Suggestion({ label, icon: Icon, color }) {
       justifyContent="center"
       sx={{
         px: spacingTokens.lg,
-        py: spacingTokens.xl,
-        borderRadius: radiusTokens.lg,
+        py: spacingTokens.md,
+        borderRadius: radiusTokens.xl,
         backgroundColor: "#FFFFFF",
       }}
     >
-      <Icon fontSize={42} color={color}></Icon>
-      <Typography lineHeight={1} textAlign="center">
+      <Icon fontSize={32} color={color}></Icon>
+      <Typography lineHeight={1.25} textAlign="center" variant="caption" fontWeight={500}>
         {label}
       </Typography>
     </Stack>

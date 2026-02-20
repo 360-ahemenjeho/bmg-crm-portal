@@ -13,5 +13,5 @@ export default function ActionButton({ variation, onClick }) {
 
   const Icon = icons[variation];
 
-  return <Icon fontSize={22} onClick={onClick} style={{ cursor: "pointer" }}></Icon>;
+  return <Icon fontSize={18} onClick={onClick} style={{ cursor: "pointer" }}></Icon>;
 }

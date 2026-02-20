@@ -8,7 +8,7 @@ import { Box } from "@mui/material";
  * @param {() => void} [props.onCheck]
  * @param {string} [props.accent]
  */
-export default function Checkbox({ size = 20, checked = false, onCheck, accent }) {
+export default function Checkbox({ size = 16, checked = false, onCheck, accent }) {
   const { main, bg, border } = useColor();
   const unitSize = `${size}px`;
   const iconSize = size * 0.65;

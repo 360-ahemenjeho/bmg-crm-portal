@@ -31,5 +31,6 @@ export function formatDueDate(date) {
  * @returns {string}
  */
 export function renderDateTime(date, time) {
+  if (!date && !time) return "Goals";
   return (date ? formatDueDate(date) : "") + (date && time ? " • " : "") + (time ? time : "");
 }

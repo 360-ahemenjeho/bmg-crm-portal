@@ -3,7 +3,7 @@ import {
   AdminOverviewPage,
   CustomerOverviewPage,
   DesignSystemPage,
-  GoalsPage,
+  TasksPage,
 } from "@/pages/dashboard";
 import { Routes as BaseRoutes, Route } from "react-router-dom";
 
@@ -22,7 +22,7 @@ export default function Routes() {
 
         {AUTHENTICATED_USER === "CUSTOMER" && (
           <>
-            <Route path="/goals" element={<GoalsPage />} />
+            <Route path="/tasks" element={<TasksPage />} />
             <Route path="/" element={<CustomerOverviewPage />} />
           </>
         )}

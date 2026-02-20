@@ -7,10 +7,11 @@ import { Box } from "@mui/material";
 /**
  * @param {Object} props
  * @param {boolean} props.active
- * @param {NavProps} props.nav
+ * @param {Omit<NavProps, "path" | "sub">} props.nav
  */
-export default function Pill({ active, nav }) {
+export default function Crumb({ active, nav }) {
   const { fg, main, shadow, elevate } = useColor();
+
   return (
     <Box
       sx={{
@@ -26,7 +27,7 @@ export default function Pill({ active, nav }) {
           bottom: 0,
           left: 0,
           right: 0,
-          height: "4px",
+          height: "1px",
           backgroundColor: main.primary,
         },
       }}

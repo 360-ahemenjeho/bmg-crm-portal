@@ -42,7 +42,7 @@ export default function TaskMiniCard({
     >
       <Stack direction="row" alignItems="center" gap={spacingTokens.md}>
         <Checkbox checked={completed} onCheck={onCheck}></Checkbox>
-        {assigneeName && <Avatar name={assigneeName} size={28}></Avatar>}
+        {assigneeName && <Avatar name={assigneeName}></Avatar>}
         <Stack gap={spacingTokens.sm}>
           <Typography
             fontWeight={500}
@@ -76,7 +76,6 @@ export default function TaskMiniCard({
           <Typography
             variant="caption"
             color="main-primary"
-            fontWeight={500}
             lineHeight={1}
             textAlign="right"
             sx={{ whiteSpace: "nowrap" }}

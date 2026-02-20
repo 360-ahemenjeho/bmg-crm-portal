@@ -8,7 +8,7 @@ import { getInitial } from "@/helpers/text";
  * @param {number} [props.size]
  * @param {boolean} [props.round]
  */
-export default function Avatar({ name, imageUrl, size = 36, round = false }) {
+export default function Avatar({ name, imageUrl, size = 28, round = false }) {
   const unitSize = `${size}px`;
 
   if (imageUrl) {

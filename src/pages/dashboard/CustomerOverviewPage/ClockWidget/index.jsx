@@ -27,7 +27,7 @@ export default function ClockWidget() {
       gap={spacingTokens.sm}
       sx={{
         backgroundColor: "#3ABFBF",
-        borderRadius: radiusTokens.xl,
+        borderRadius: radiusTokens["5xl"],
         padding: spacingTokens.xl,
       }}
     >
