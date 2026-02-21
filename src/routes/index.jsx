@@ -1,4 +1,5 @@
-import { DashboardLayout } from "@/layouts";
+import { AuthLayout, DashboardLayout } from "@/layouts";
+import { LoginPage } from "@/pages/auth";
 import {
   AdminOverviewPage,
   CustomerOverviewPage,
@@ -26,6 +27,12 @@ export default function Routes() {
             <Route path="/" element={<CustomerOverviewPage />} />
           </>
         )}
+      </Route>
+
+      <Route element={<AuthLayout />}>
+        <>
+          <Route path="/login" element={<LoginPage />} />
+        </>
       </Route>
     </BaseRoutes>
   );

@@ -1,8 +1,8 @@
 export const THEME_KEY = "theme";
 
 export const fontSizes = {
-  h1: "25px",
-  h2: "20.96px",
+  h1: "28px",
+  h2: "22x",
   h3: "16px",
   caption: "13px",
   body1: "14px",

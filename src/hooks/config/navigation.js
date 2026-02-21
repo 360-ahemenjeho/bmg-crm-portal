@@ -2,7 +2,6 @@ import {
   AppsListRegular,
   BuildingRegular,
   CheckboxCheckedRegular,
-  CheckboxIndeterminateRegular,
   ClockRegular,
   CubeRegular,
   DataPieRegular,
