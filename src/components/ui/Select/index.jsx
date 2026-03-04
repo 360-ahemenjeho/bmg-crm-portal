@@ -30,7 +30,7 @@ export default function Select({
   options,
   renderOption,
   disabled,
-  round = 4,
+  round = 3,
   name,
   onBlur,
   onChange,

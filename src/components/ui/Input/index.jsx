@@ -22,7 +22,7 @@ import { FormControl, FormHelperText, FormLabel, FilledInput, OutlinedInput } fr
 export default function Input({
   label,
   error,
-  round = 4,
+  round = 3,
   name,
   onBlur,
   onChange,

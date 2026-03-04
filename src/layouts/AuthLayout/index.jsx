@@ -1,33 +1,31 @@
-import { Typography } from "@/components/ui";
-import { spacingTokens } from "@/constants/theme";
+import { ThemeToggleButton, Typography } from "@/components/ui";
+import { radius, spacingTokens } from "@/constants/theme";
 import { useColor } from "@/contexts/color";
 import { Box, Stack } from "@mui/material";
+import { useState } from "react";
 import { Outlet, useNavigate } from "react-router";
 
 export default function AuthLayout() {
   const navigate = useNavigate();
-  const { bg, main } = useColor();
+  const { bg, main, theme: mode, toggleTheme } = useColor();
+  const illustration = mode === "light" ? "/auth-light.png" : "/auth-dark.png";
+  const [spinning, setSpinning] = useState(false);
 
-  function navigateToDashboard() {
+  function navigateToHome() {
     navigate("/");
   }
 
+  const handleToggle = () => {
+    if (spinning) return;
+    setSpinning(true);
+    toggleTheme();
+    setTimeout(() => setSpinning(false), 500);
+  };
+
+  const isDark = mode === "dark";
+
   return (
     <Box display="grid" gridTemplateColumns={{ xs: "1fr", md: "repeat(2, 1fr)" }}>
-      <Box
-        sx={{
-          backgroundImage: "url(/auth.webp)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundColor: main.primary,
-          backgroundBlendMode: "overlay",
-          display: { xs: "none", md: "flex" },
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      ></Box>
-
       <Box sx={{ backgroundColor: bg.tertiary }}>
         <Stack
           justifyContent="center"
@@ -42,26 +40,56 @@ export default function AuthLayout() {
             px: spacingTokens.md,
           }}
         >
-          <Stack alignItems="center">
-            <Box component="img" src="/logo-dark.png" sx={{ height: "40px" }} />
+          <Stack alignItems="start">
+            <Box
+              component="img"
+              src="/logo-icon.png"
+              sx={{ height: "40px" }}
+              onClick={navigateToHome}
+            />
           </Stack>
 
           <Box>
-            <Typography variant="h1" textAlign="center" lineHeight={1.5} fontWeight={700}>
+            <Typography variant="h1" lineHeight={1.5} fontWeight={500}>
               Sell Smarter. Connect Better.
             </Typography>
-            <Typography
-              color="secondary"
-              textAlign="center"
-              fontWeight={400}
-              variant="h3"
-              lineHeight={1.25}
-            >
+            <Typography color="secondary" fontWeight={300} variant="h3" lineHeight={1.25}>
               Your deals, contacts, and insights are waiting.
             </Typography>
           </Box>
           <Outlet />
         </Stack>
+      </Box>
+      <Box
+        sx={{
+          backgroundImage: `linear-gradient(180deg, ${main.primary}, ${bg.tertiary})`,
+          display: { xs: "none", md: "flex" },
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <Box
+          component="img"
+          src={illustration}
+          sx={{
+            borderRadius: radius[3],
+            height: "90svh",
+            width: "50svw",
+            position: "absolute",
+            right: "-5svw",
+            bottom: "-10px",
+            objectFit: "cover",
+            display: "block",
+            objectPosition: "left top",
+          }}
+        />
+
+        <Box sx={{ position: "absolute", top: "20px", right: "20px" }}>
+          <ThemeToggleButton spinning={spinning} isDark={isDark} onToggle={handleToggle} />
+        </Box>
       </Box>
     </Box>
   );

@@ -259,7 +259,7 @@ function configureTheme({
             height: inputHeight,
             alignItems: "center",
             gap: spacingTokens.sm,
-            borderRadius: radius[4],
+            borderRadius: radius[3],
             backgroundColor: input["outlined"]["default"]["bg"],
             "&.MuiInputBase-multiline": {
               height: "auto",
@@ -316,7 +316,7 @@ function configureTheme({
             boxShadow: "inset 0px 2px 2px rgba(0, 0, 0, 0.2) !important",
             fontSize: fontSizes.body1,
             boxSizing: "border-box",
-            borderRadius: radius[4],
+            borderRadius: radius[3],
             color: input["filled"]["default"]["fg"],
             padding: `${inputPadding.y} ${inputPadding.x}`,
             height: inputHeight,
@@ -373,7 +373,7 @@ function configureTheme({
         styleOverrides: {
           root: {
             fontSize: fontSizes.body1,
-            borderRadius: radius[4],
+            borderRadius: radius[3],
             boxSizing: "border-box",
             padding: `${inputPadding.y} ${inputPadding.x}`,
             height: inputHeight,

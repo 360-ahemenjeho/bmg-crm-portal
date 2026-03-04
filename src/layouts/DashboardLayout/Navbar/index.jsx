@@ -7,7 +7,7 @@ import Notification from "./Notification";
 import { Crumb } from "@/components/shared";
 import { useCurrentRoute } from "@/hooks/config/route";
 import { useState } from "react";
-import ThemeToggleButton from "./ThemeToggleButton";
+import { ThemeToggleButton } from "@/components/ui";
 
 /**
  * @param {Object} props
