@@ -26,6 +26,7 @@ import {
   TextBulletListSquareRegular,
   TextQuoteFilled,
   WrenchSettingsRegular,
+  CircleSparkleRegular,
 } from "@fluentui/react-icons";
 
 /** @typedef {import("@/types/global.d.js").NavItem} NavItemProps */
@@ -119,6 +120,7 @@ export function useNavigationMenu() {
       { label: "Forms", color: "#3B009D", path: "/forms", icon: FormRegular },
       { label: "Automation", color: "#F1592A", path: "/automation", icon: WrenchSettingsRegular },
       { label: "Reports", color: "#00FF5E", path: "/reports", icon: DocumentLandscapeDataRegular },
+      { label: "Integration", color: "#ff0099", path: "/integration", icon: CircleSparkleRegular },
     ],
   };
 
