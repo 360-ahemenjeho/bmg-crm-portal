@@ -10,8 +10,17 @@ import DropdownItem from "./DropdownItem";
  * @param {T[]} props.items
  * @param {(item: T) => { label: string, value: string, icon?: React.ComponentType }} props.renderItem
  * @param {(value: string, item: T) => void} [props.onSelect]
+ * @param {string} [props.selectedValue]
  */
-export default function Dropdown({ open, anchorEl, onClose, items = [], renderItem, onSelect }) {
+export default function Dropdown({
+  open,
+  anchorEl,
+  onClose,
+  items = [],
+  renderItem,
+  onSelect,
+  selectedValue,
+}) {
   return (
     <Menu
       open={open}
@@ -26,6 +35,7 @@ export default function Dropdown({ open, anchorEl, onClose, items = [], renderIt
           <DropdownItem
             key={value ?? index}
             icon={icon}
+            selected={value === selectedValue}
             onClick={() => {
               onSelect?.(value, item);
               onClose?.();

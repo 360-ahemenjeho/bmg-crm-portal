@@ -33,6 +33,9 @@
  * @typedef {Object} FieldFilterConfig
  * @property {"field"} type - Discriminant for the field filter.
  * @property {string} key - Unique key used to read/write the value in filterValues.
+ * @property {any[]} items - List of items to display in the dropdown.
+ * @property {(item: any) => { label: string; value: string }} renderItem - Maps an item to its display label and value.
+ * @property {(value: string, item: any) => void} [onSelect] - Optional callback fired after a field is selected.
  */
 
 /**

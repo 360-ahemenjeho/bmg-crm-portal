@@ -462,22 +462,6 @@ function configureTheme({
           },
         },
       },
-      MuiFormControlLabel: {
-        styleOverrides: {
-          root: {
-            "&.MuiFormControlLabel-root": {
-              margin: 0,
-              "& .MuiFormControlLabel-label": {
-                fontWeight: 400,
-                lineHeight: 1,
-                marginLeft: spacingTokens.md,
-                color: fg.primary,
-                fontSize: fontSizes.caption,
-              },
-            },
-          },
-        },
-      },
       MuiFormGroup: {
         styleOverrides: {
           root: {
@@ -497,6 +481,9 @@ function configureTheme({
             "& .MuiFormLabel-asterisk": {
               color: main.error,
             },
+            "&.Mui-focused": {
+              color: main.primary,
+            },
           },
         },
       },
@@ -507,6 +494,28 @@ function configureTheme({
             fontWeight: 500,
             lineHeight: 1,
             color: fg.secondary,
+            "&.Mui-focused": {
+              color: main.primary,
+            },
+          },
+        },
+      },
+      MuiFormControlLabel: {
+        styleOverrides: {
+          root: {
+            "&.MuiFormControlLabel-root": {
+              margin: 0,
+              "& .MuiFormControlLabel-label": {
+                fontWeight: 400,
+                lineHeight: 1,
+                marginLeft: spacingTokens.md,
+                color: fg.primary,
+                fontSize: fontSizes.caption,
+              },
+              "&:focus-within .MuiFormControlLabel-label": {
+                color: main.primary,
+              },
+            },
           },
         },
       },
@@ -561,7 +570,7 @@ function configureTheme({
             color: menuItem["default"]["fg"],
             padding: `${spacing[2]} ${spacing[3]}`,
             borderBottom: "none",
-            borderRadius: radius[2],
+            borderRadius: radius[3],
             fontWeight: 400,
             "&:hover": {
               backgroundColor: menuItem["hover"]["bg"],
@@ -569,7 +578,7 @@ function configureTheme({
             },
             "&.Mui-selected": {
               backgroundColor: main.primary,
-              color: "#FFFFFF",
+              color: mode === "dark" ? "#000000" : "#FFFFFF",
             },
             "&.Mui-selected:hover": {
               backgroundColor: menuItem["hover"]["bg"],

@@ -19,6 +19,7 @@ import {
   CircleRegular,
   AddRegular,
   CheckboxUncheckedRegular,
+  CalendarRegular,
 } from "@fluentui/react-icons";
 import { Stack, TableCell, TableRow } from "@mui/material";
 import { useCallback, useState } from "react";
@@ -211,7 +212,32 @@ export default function TasksPage() {
   /** @type {import("@/types/global.d").FilterConfig[]} */
   const filters = [
     { type: "search", key: "query" },
-    { type: "field", key: "field" },
+    {
+      type: "field",
+      key: "field",
+      items: [
+        {
+          label: "Date From",
+          value: "date_from",
+          icon: CalendarRegular,
+        },
+        {
+          label: "Date To",
+          value: "date_to",
+          icon: CalendarRegular,
+        },
+        {
+          label: "Status",
+          value: "status",
+          icon: CircleRegular,
+        },
+      ],
+      renderItem: (field) => ({
+        label: field.label,
+        value: field.value,
+        icon: field.icon,
+      }),
+    },
     {
       type: "select",
       key: "user",

@@ -8,10 +8,11 @@ import { Stack } from "@mui/material";
  * @param {string} props.children
  * @param {() => void} [props.onClick]
  * @param {boolean} [props.disabled]
+ * @param {boolean} [props.selected]
  */
-export default function DropdownItem({ icon: Icon, children, onClick, disabled }) {
+export default function DropdownItem({ icon: Icon, children, onClick, disabled, selected }) {
   return (
-    <MenuItem onClick={onClick} disabled={disabled}>
+    <MenuItem onClick={onClick} disabled={disabled} selected={selected}>
       <Stack direction="row" alignItems="center" gap={spacingTokens.xs}>
         {Icon && (
           <Stack alignItems="center" justifyContent="center">

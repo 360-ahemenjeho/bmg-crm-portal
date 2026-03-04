@@ -20,8 +20,13 @@ export default function FilterRenderer({ filter, filterValues, onFilterChange })
     case "field":
       return (
         <FilterField
-        //   value={filterValues[filter.key] ?? ""}
-        //   onChange={(value) => onFilterChange(filter.key, value)}
+          items={filter.items}
+          renderItem={filter.renderItem}
+          selectedValue={filterValues[filter.key]}
+          onSelect={(val, item) => {
+            onFilterChange(filter.key, val);
+            filter.onSelect?.(val, item);
+          }}
         />
       );
 
