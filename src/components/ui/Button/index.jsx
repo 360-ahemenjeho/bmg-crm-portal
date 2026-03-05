@@ -1,7 +1,7 @@
 import { radius, spacing } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { Button as BaseButton } from "@mui/material";
-import { MoonLoader } from "react-spinners";
+import { PulseLoader } from "react-spinners";
 
 /**
  * @param {import("@mui/material").ButtonProps & {
@@ -40,7 +40,7 @@ export default function Button({
     >
       {startContent && startContent}
       {children}
-      {loading ? <MoonLoader size={10}></MoonLoader> : endContent && endContent}
+      {loading ? <PulseLoader size={10}></PulseLoader> : endContent && endContent}
     </BaseButton>
   );
 }

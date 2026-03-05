@@ -452,6 +452,69 @@ export const foregroundColors = {
   },
 };
 
+export const statusColors = {
+  light: {
+    primary: {
+      primary: "#2C3891",
+      secondary: "#EFF0F0",
+    },
+    success: {
+      primary: "#05970F",
+      secondary: "#EFF0F0",
+    },
+    error: {
+      primary: "#FF0004",
+      secondary: "#EFF0F0",
+    },
+    warning: {
+      primary: "#F7941D",
+      secondary: "#EFF0F0",
+    },
+    info: {
+      primary: "#13ABBC",
+      secondary: "#EFF0F0",
+    },
+    secondary: {
+      primary: "#0A62C7",
+      secondary: "#EFF0F0",
+    },
+    neutral: {
+      primary: "#7DBBFF",
+      secondary: "#EFF0F0",
+    },
+  },
+  dark: {
+    primary: {
+      primary: "#7D73CC",
+      secondary: "hsla(0, 0%, 22%, 1)",
+    },
+    success: {
+      primary: "#2ECC57",
+      secondary: "hsla(0, 0%, 22%, 1)",
+    },
+    error: {
+      primary: "#FF4D4D",
+      secondary: "hsla(0, 0%, 22%, 1)",
+    },
+    warning: {
+      primary: "#FFC107",
+      secondary: "hsla(0, 0%, 22%, 1)",
+    },
+    info: {
+      primary: "#29C8DB",
+      secondary: "hsla(0, 0%, 22%, 1)",
+    },
+    secondary: {
+      primary: "#4A9EE0",
+      secondary: "hsla(0, 0%, 22%, 1)",
+    },
+    neutral: {
+      primary: "#A3CCFF",
+      secondary: "hsla(0, 0%, 22%, 1)",
+    },
+  },
+};
+
 export const scrollBarColors = {
   light: {
     track: "hsl(0, 0%, 50%)",
@@ -473,10 +536,10 @@ export const inputColors = {
         border: "#E5E5E5",
       },
       error: {
-        fg: "#E95070",
-        placeholder: "rgba(233, 80, 112, 0.9)",
-        bg: "rgba(233, 80, 112, 0.08)",
-        border: "#E95070",
+        fg: statusColors.light.error.primary,
+        placeholder: statusColors.light.error.primary,
+        bg: statusColors.light.error.primary + "0D",
+        border: statusColors.light.error.primary,
       },
       disabled: {
         fg: "#a9a9a9",
@@ -493,10 +556,10 @@ export const inputColors = {
         border: "#FFFFFF",
       },
       error: {
-        fg: "#E95070",
-        placeholder: "rgba(233, 80, 112, 0.9)",
-        bg: "rgba(233, 80, 112, 0.08)",
-        border: "#E95070",
+        fg: statusColors.light.error.primary,
+        placeholder: statusColors.light.error.primary,
+        bg: statusColors.light.error.primary + "0D",
+        border: statusColors.light.error.primary,
       },
       disabled: {
         fg: "#a9a9a9",
@@ -515,10 +578,10 @@ export const inputColors = {
         border: "hsla(0, 0%, 25%, 1)",
       },
       error: {
-        fg: "#E95070",
-        placeholder: "rgba(233, 80, 112, 0.7)",
-        bg: "rgba(233, 80, 112, 0.10)",
-        border: "#E95070",
+        fg: statusColors.dark.error.primary,
+        placeholder: statusColors.dark.error.primary,
+        bg: statusColors.dark.error.primary + "0D",
+        border: statusColors.dark.error.primary,
       },
       disabled: {
         fg: "hsla(0, 0%, 40%, 1)",
@@ -535,10 +598,10 @@ export const inputColors = {
         border: "hsla(0, 0%, 22%, 1)",
       },
       error: {
-        fg: "#E95070",
-        placeholder: "rgba(233, 80, 112, 0.7)",
-        bg: "rgba(233, 80, 112, 0.10)",
-        border: "#E95070",
+        fg: statusColors.dark.error.primary,
+        placeholder: statusColors.dark.error.primary,
+        bg: statusColors.dark.error.primary + "0D",
+        border: statusColors.dark.error.primary,
       },
       disabled: {
         fg: "hsla(0, 0%, 40%, 1)",
@@ -638,69 +701,6 @@ export const radiusTokens = {
 
 export const inputHeight = "34px";
 export const dashboardNavHeight = "40px";
-
-export const statusColors = {
-  light: {
-    primary: {
-      primary: "#2C3891",
-      secondary: "#EFF0F0",
-    },
-    success: {
-      primary: "#05970F",
-      secondary: "#EFF0F0",
-    },
-    error: {
-      primary: "#FF0004",
-      secondary: "#EFF0F0",
-    },
-    warning: {
-      primary: "#F7941D",
-      secondary: "#EFF0F0",
-    },
-    info: {
-      primary: "#13ABBC",
-      secondary: "#EFF0F0",
-    },
-    secondary: {
-      primary: "#0A62C7",
-      secondary: "#EFF0F0",
-    },
-    neutral: {
-      primary: "#7DBBFF",
-      secondary: "#EFF0F0",
-    },
-  },
-  dark: {
-    primary: {
-      primary: "#7D73CC",
-      secondary: "hsla(0, 0%, 22%, 1)",
-    },
-    success: {
-      primary: "#2ECC57",
-      secondary: "hsla(0, 0%, 22%, 1)",
-    },
-    error: {
-      primary: "#FF4D4D",
-      secondary: "hsla(0, 0%, 22%, 1)",
-    },
-    warning: {
-      primary: "#FFC107",
-      secondary: "hsla(0, 0%, 22%, 1)",
-    },
-    info: {
-      primary: "#29C8DB",
-      secondary: "hsla(0, 0%, 22%, 1)",
-    },
-    secondary: {
-      primary: "#4A9EE0",
-      secondary: "hsla(0, 0%, 22%, 1)",
-    },
-    neutral: {
-      primary: "#A3CCFF",
-      secondary: "hsla(0, 0%, 22%, 1)",
-    },
-  },
-};
 
 export const elevateColors = {
   light: {

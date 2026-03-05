@@ -2,18 +2,34 @@ import { Button, Input, Typography } from "@/components/ui";
 import { fontSizes, spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { Box, Stack } from "@mui/material";
-import { useState } from "react";
+import { useForm } from "@/lib/form";
+import { rules } from "./lib";
+import { useSearchParams } from "react-router-dom";
+import { useLogin } from "@/queries/auth";
+import { useNotification } from "@/contexts/notification";
 
 export default function LoginPage() {
+  const [params] = useSearchParams();
+  const otpEnabled = params.get("otp_enabled");
+
+  const notify = useNotification();
   const { fg, main } = useColor();
-  const [formData, setFormData] = useState(
-    /** @type {any} */ ({
+  const { isPending, mutateAsync } = useLogin();
+
+  const { onBlur, onChange, formData, formErrors, validateForm } = useForm({
+    init: {
       email: "",
       password: "",
-    }),
-  );
+      otp: "",
+    },
+    rules: () => rules({ otpEnabled: !!otpEnabled && otpEnabled === "true" }),
+  });
 
-  const [formErrors, setFormErrors] = useState(/** @type {any} */ ({}));
+  async function handleSubmit() {
+    notify.error("Something went wrong");
+    if (!validateForm()) return;
+    mutateAsync(formData);
+  }
 
   return (
     <>
@@ -30,8 +46,8 @@ export default function LoginPage() {
           label="Email"
           name="email"
           value={(name) => formData[name]}
-          onChange={(name, value) => console.log(name, value)}
-          onBlur={(name, value) => console.log(name, value)}
+          onChange={(name, value) => onChange(name, value)}
+          onBlur={(name, value) => onBlur(name, value)}
           error={(name) => formErrors?.[name]}
         />
 
@@ -39,12 +55,14 @@ export default function LoginPage() {
           label="Password"
           name="password"
           value={(name) => formData[name]}
-          onChange={(name, value) => console.log(name, value)}
-          onBlur={(name, value) => console.log(name, value)}
+          onChange={(name, value) => onChange(name, value)}
+          onBlur={(name, value) => onBlur(name, value)}
           error={(name) => formErrors?.[name]}
         />
 
-        <Button size="large">Submit</Button>
+        <Button size="large" loading={isPending} onClick={handleSubmit}>
+          Submit
+        </Button>
 
         <Box component="p" m={0} p={0} fontSize={fontSizes.caption} color={fg.primary}>
           Forgot Password?{" "}

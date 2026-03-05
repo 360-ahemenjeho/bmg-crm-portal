@@ -4,6 +4,9 @@ import { useColor } from "@/contexts/color";
 import { useMemo } from "react";
 import { configureDashboardTheme } from "@/themes";
 import Routes from "@/routes";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/lib/query-client";
+import { NotificationProvider } from "./contexts/notification";
 
 function App() {
   const colors = useColor();
@@ -17,10 +20,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ThemeProvider theme={dashboardTheme}>
-        <CssBaseline></CssBaseline>
-        <Routes></Routes>
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <NotificationProvider>
+          <ThemeProvider theme={dashboardTheme}>
+            <CssBaseline></CssBaseline>
+            <Routes></Routes>
+          </ThemeProvider>
+        </NotificationProvider>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 }

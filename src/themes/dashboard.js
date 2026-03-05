@@ -484,18 +484,8 @@ function configureTheme({
             "&.Mui-focused": {
               color: main.primary,
             },
-          },
-        },
-      },
-      MuiInputLabel: {
-        styleOverrides: {
-          root: {
-            fontSize: fontSizes.caption,
-            fontWeight: 500,
-            lineHeight: 1,
-            color: fg.secondary,
-            "&.Mui-focused": {
-              color: main.primary,
+            "&.Mui-error": {
+              color: status.error.primary,
             },
           },
         },
@@ -510,7 +500,7 @@ function configureTheme({
                 lineHeight: 1,
                 marginLeft: spacingTokens.md,
                 color: fg.primary,
-                fontSize: fontSizes.caption,
+                fontSize: fontSizes.body1,
               },
               "&:focus-within .MuiFormControlLabel-label": {
                 color: main.primary,
@@ -533,7 +523,7 @@ function configureTheme({
             },
             "&.Mui-error": {
               fontWeight: 400,
-              color: input.outlined.error.fg,
+              color: status.error.primary,
             },
           },
         },

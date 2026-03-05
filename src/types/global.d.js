@@ -1,3 +1,5 @@
+export {};
+
 /** @typedef {{ path: string, color?: string, label?: string, icon: React.ComponentType<{ fontSize?: number, style?: Record<string, any> }>, sub?: Array<{ path: string, label?: string, icon: React.ComponentType<{ fontSize?: number, style?: Record<string, any> }> }> }} NavItem */
 /** @typedef {{label: string, key: number }} Tab */
 
@@ -81,4 +83,30 @@
  * @property {() => void} onClose
  */
 
-export {};
+/**
+ * @typedef {'success' | 'error' | 'info' | 'warning'} NotificationVariant
+ */
+
+/**
+ * @typedef Notification
+ * @property {number} id
+ * @property {string} message
+ * @property {NotificationVariant} variant
+ * @property {number} duration
+ * @property {number} [priority]
+ */
+
+/**
+ * @typedef NotificationOptions
+ * @property {number} [duration]
+ * @property {number} [priority]
+ */
+
+/**
+ * @typedef NotificationAPI
+ * @property {(message: string, variant?: NotificationVariant, options?: NotificationOptions) => void} notify
+ * @property {(message: string, options?: NotificationOptions) => void} success
+ * @property {(message: string, options?: NotificationOptions) => void} error
+ * @property {(message: string, options?: NotificationOptions) => void} warning
+ * @property {(message: string, options?: NotificationOptions) => void} info
+ */

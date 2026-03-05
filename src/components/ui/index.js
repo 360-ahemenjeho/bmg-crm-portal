@@ -18,3 +18,4 @@ export { default as TriggerButton } from "./TriggerButton";
 export { default as Input } from "./Input";
 export { default as Select } from "./Select";
 export { default as ThemeToggleButton } from "./ThemeToggleButton";
+export { default as RingProgress } from "./RingProgress";

@@ -5,6 +5,7 @@ import { dashboardNavHeight, spacingTokens } from "@/lib/theme";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
+import { AuthMiddleware } from "@/middleware";
 
 export default function DashboardLayout() {
   const { border, bg } = useColor();
@@ -17,53 +18,55 @@ export default function DashboardLayout() {
   }
 
   return (
-    <Box sx={{ display: "flex" }}>
-      {!isMobile && (
-        <Box
-          sx={{
-            flexShrink: 0,
-            borderRight: `1px solid ${border.primary}`,
-            backgroundColor: bg.secondary,
-          }}
-        >
-          <Sidebar />
-        </Box>
-      )}
-
-      {isMobile && (
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={toggleDrawer}
-          ModalProps={{ keepMounted: true }}
-          sx={{
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              boxShadow: "none !important",
+    <AuthMiddleware>
+      <Box sx={{ display: "flex" }}>
+        {!isMobile && (
+          <Box
+            sx={{
+              flexShrink: 0,
               borderRight: `1px solid ${border.primary}`,
               backgroundColor: bg.secondary,
-            },
-          }}
-        >
-          <Sidebar />
-        </Drawer>
-      )}
+            }}
+          >
+            <Sidebar />
+          </Box>
+        )}
 
-      <Box sx={{ height: "100svh", flexGrow: 1 }}>
-        <Navbar onToggle={toggleDrawer} />
-        <Box
-          component="main"
-          sx={{
-            p: spacingTokens.md,
-            boxSizing: "border-box",
-            backgroundColor: bg.primary,
-            height: `calc(100svh - ${dashboardNavHeight})`,
-            overflowY: "auto",
-          }}
-        >
-          <Outlet />
+        {isMobile && (
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            onClose={toggleDrawer}
+            ModalProps={{ keepMounted: true }}
+            sx={{
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                boxShadow: "none !important",
+                borderRight: `1px solid ${border.primary}`,
+                backgroundColor: bg.secondary,
+              },
+            }}
+          >
+            <Sidebar />
+          </Drawer>
+        )}
+
+        <Box sx={{ height: "100svh", flexGrow: 1 }}>
+          <Navbar onToggle={toggleDrawer} />
+          <Box
+            component="main"
+            sx={{
+              p: spacingTokens.md,
+              boxSizing: "border-box",
+              backgroundColor: bg.primary,
+              height: `calc(100svh - ${dashboardNavHeight})`,
+              overflowY: "auto",
+            }}
+          >
+            <Outlet />
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </AuthMiddleware>
   );
 }
