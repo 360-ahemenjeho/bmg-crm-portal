@@ -1,5 +1,6 @@
 import { useAuthStore } from "@/store/auth";
 import axios from "axios";
+import { notification } from "./notification";
 
 export const api = axios.create({
   baseURL: "https://bmg-crm.onrender.com/V1/api",
@@ -22,12 +23,12 @@ api.interceptors.response.use(
     const status = error?.response?.status;
 
     if (error?.code === "ERR_NETWORK") {
-      // toast.info("Connection error, please try again!");
+      notification.info("Connection error, please try again!");
       return Promise.reject(error);
     }
 
     if (status === 401) {
-      // toast.error("Session expired. Please login again.");
+      notification.error("Session expired. Please login again.");
 
       const { clearAuth } = useAuthStore.getState();
       clearAuth();
@@ -39,7 +40,7 @@ api.interceptors.response.use(
 
     if (status === 403) {
       const message = error?.response?.data?.message || "Access denied";
-      // toast.error(message);
+      notification.error(message);
     }
 
     return Promise.reject(error);
