@@ -1,7 +1,7 @@
 import { ActionButton, Toolbar } from "@/components/shared";
 import { Button, Checkbox, Chip, Table, TableBody, TableHead } from "@/components/ui";
-import { COMPANY_STATUS_VARIANT } from "@/constants/lib";
-import { spacingTokens } from "@/constants/theme";
+import { COMPANY_STATUS_VARIANT } from "@/lib/data";
+import { spacingTokens } from "@/lib/theme";
 import { renderDateTime } from "@/helpers/date";
 import { renderText } from "@/helpers/text";
 import {

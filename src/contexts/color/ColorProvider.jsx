@@ -13,7 +13,7 @@ import {
   statusColors,
   elevateColors,
   shadowColors,
-} from "@/constants/theme";
+} from "@/lib/theme";
 import ColorContext from "./ColorContext";
 
 /**

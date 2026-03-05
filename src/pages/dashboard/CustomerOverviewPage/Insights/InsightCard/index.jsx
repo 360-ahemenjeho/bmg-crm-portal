@@ -1,6 +1,6 @@
 import { HorizontalBar } from "@/components/shared";
 import { Card, Typography } from "@/components/ui";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import { ArrowTrendingDownRegular, ArrowTrendingRegular } from "@fluentui/react-icons";
 import { CardContent, Stack } from "@mui/material";
 

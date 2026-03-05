@@ -1,5 +1,5 @@
 import { Button, TriggerButton } from "@/components/ui";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import { ModalLayout } from "@/layouts";
 import {
   AddRegular,

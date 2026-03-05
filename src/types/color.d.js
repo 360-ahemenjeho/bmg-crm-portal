@@ -11,7 +11,7 @@ import {
   statusColors,
   elevateColors,
   shadowColors,
-} from "@/constants/theme";
+} from "@/lib/theme";
 
 /**
  * @typedef {Object} ColorContextValue

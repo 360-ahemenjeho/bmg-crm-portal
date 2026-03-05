@@ -1,4 +1,4 @@
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import { Box, Stack } from "@mui/material";
 import Hero from "./Hero";
 import Shortcuts from "./Shortcuts";

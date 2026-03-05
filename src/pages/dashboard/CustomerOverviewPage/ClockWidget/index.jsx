@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Stack, Typography } from "@mui/material";
-import { radiusTokens, spacingTokens } from "@/constants/theme";
+import { radiusTokens, spacingTokens } from "@/lib/theme";
 import useColor from "@/contexts/color/useColor";
 
 export default function ClockWidget() {

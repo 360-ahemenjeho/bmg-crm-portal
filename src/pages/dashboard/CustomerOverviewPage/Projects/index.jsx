@@ -1,7 +1,7 @@
 import { ActionButton } from "@/components/shared";
 import { Checkbox, Chip, Table, TableBody, TableHead } from "@/components/ui";
-import { TASK_STATUS_VARIANT } from "@/constants/lib";
-import { spacingTokens } from "@/constants/theme";
+import { TASK_STATUS_VARIANT } from "@/lib/data";
+import { spacingTokens } from "@/lib/theme";
 import { formatDueDate } from "@/helpers/date";
 import {
   CalendarDateRegular,

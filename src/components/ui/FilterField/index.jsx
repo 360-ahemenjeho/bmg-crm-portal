@@ -1,4 +1,4 @@
-import { actionSizes, radiusTokens } from "@/constants/theme";
+import { actionSizes, radiusTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { FilterRegular } from "@fluentui/react-icons";
 import { Box } from "@mui/material";

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { SearchRegular, DismissRegular } from "@fluentui/react-icons";
 import { Box } from "@mui/material";
 import { useColor } from "@/contexts/color";
-import { actionSizes, radius, radiusTokens, spacingTokens, typefaces } from "@/constants/theme";
+import { actionSizes, radius, radiusTokens, spacingTokens, typefaces } from "@/lib/theme";
 
 /**
  * @param {Object} props

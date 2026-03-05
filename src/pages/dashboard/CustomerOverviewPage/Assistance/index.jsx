@@ -1,4 +1,4 @@
-import { radiusTokens, spacingTokens } from "@/constants/theme";
+import { radiusTokens, spacingTokens } from "@/lib/theme";
 import {
   CircleSparkleRegular,
   DocumentOnePageSparkleRegular,

@@ -1,5 +1,5 @@
 import { Avatar, Checkbox, Typography } from "@/components/ui";
-import { radius, spacingTokens } from "@/constants/theme";
+import { radius, spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { renderDateTime } from "@/helpers/date";
 import { ClockAlarmRegular } from "@fluentui/react-icons";

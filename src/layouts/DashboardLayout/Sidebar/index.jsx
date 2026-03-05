@@ -1,9 +1,9 @@
 import { Box, Stack } from "@mui/material";
 import { ArrowExitFilled } from "@fluentui/react-icons";
 import { useRef, useState } from "react";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import NavLink from "./NavLink";
-import { useNavigationMenu } from "@/hooks/config/navigation";
+import { useNavigationMenu } from "@/lib/navigation";
 import { useLocation, useNavigate } from "react-router-dom";
 import { footerHeight, headerHeight } from "./lib";
 import { useColor } from "@/contexts/color";

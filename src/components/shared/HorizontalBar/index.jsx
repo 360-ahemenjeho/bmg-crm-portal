@@ -1,4 +1,4 @@
-import { fontSizes, spacingTokens } from "@/constants/theme";
+import { fontSizes, spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 
 /**

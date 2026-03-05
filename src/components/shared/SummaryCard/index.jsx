@@ -1,5 +1,5 @@
 import { Typography } from "@/components/ui";
-import { radius, radiusTokens, spacingTokens } from "@/constants/theme";
+import { radius, radiusTokens, spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { ArrowRightFilled } from "@fluentui/react-icons";
 import { Box, Button, Stack } from "@mui/material";

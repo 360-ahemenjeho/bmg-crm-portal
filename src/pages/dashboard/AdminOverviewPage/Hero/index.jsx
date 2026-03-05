@@ -1,5 +1,5 @@
 import { Button, Typography } from "@/components/ui";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import { AddFilled, CircleSmallFilled } from "@fluentui/react-icons";
 import { Box, Stack } from "@mui/material";
 

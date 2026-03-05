@@ -1,4 +1,4 @@
-import { actionSizes } from "@/constants/theme";
+import { actionSizes } from "@/lib/theme";
 import { WeatherMoonRegular, WeatherSunnyRegular } from "@fluentui/react-icons";
 import { Box } from "@mui/material";
 

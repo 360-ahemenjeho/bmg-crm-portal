@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import { spacing, spacingTokens } from "@/constants/theme";
+import { spacing, spacingTokens } from "@/lib/theme";
 import { Typography } from "@/components/ui";
 import { DismissRegular } from "@fluentui/react-icons";
 import { useColor } from "@/contexts/color";

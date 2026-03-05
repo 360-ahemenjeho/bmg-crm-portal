@@ -1,4 +1,4 @@
-import { actionSizes } from "@/constants/theme";
+import { actionSizes } from "@/lib/theme";
 import { Box } from "@mui/material";
 
 export default function Avatar() {

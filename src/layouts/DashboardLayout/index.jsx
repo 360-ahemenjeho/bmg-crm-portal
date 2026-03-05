@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Drawer, useTheme, useMediaQuery } from "@mui/material";
 import { useColor } from "@/contexts/color";
-import { dashboardNavHeight, spacingTokens } from "@/constants/theme";
+import { dashboardNavHeight, spacingTokens } from "@/lib/theme";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";

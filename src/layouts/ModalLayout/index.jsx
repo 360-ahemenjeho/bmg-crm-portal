@@ -1,6 +1,6 @@
 import { useColor } from "@/contexts/color";
 import { Modal as BaseModal, Box, Stack } from "@mui/material";
-import { radius, spacing, spacingTokens } from "@/constants/theme";
+import { radius, spacing, spacingTokens } from "@/lib/theme";
 import ModalHeader from "./ModalHeader";
 import React from "react";
 

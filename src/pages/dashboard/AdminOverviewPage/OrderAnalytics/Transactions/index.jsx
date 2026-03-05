@@ -1,6 +1,6 @@
 import { BarChart, InsightTag } from "@/components/shared";
 import { Card } from "@/components/ui";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import { MoreHorizontalFilled } from "@fluentui/react-icons";
 import { Box, CardContent, Stack, Typography } from "@mui/material";
 

@@ -2,7 +2,7 @@
  * @typedef {(typeof namedRoutes)[keyof typeof namedRoutes]} RouteName
  */
 
-import { namedRoutes } from "@/constants/lib";
+import { namedRoutes } from "@/lib/data";
 import { matchPath, useLocation } from "react-router-dom";
 
 /**

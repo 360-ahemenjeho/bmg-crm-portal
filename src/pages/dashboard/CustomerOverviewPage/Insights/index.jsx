@@ -1,4 +1,4 @@
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import { Box } from "@mui/material";
 import InsightCard from "./InsightCard";
 

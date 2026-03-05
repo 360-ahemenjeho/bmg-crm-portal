@@ -7,7 +7,7 @@ import {
   spacing,
   spacingTokens,
   typefaces,
-} from "@/constants/theme";
+} from "@/lib/theme";
 import { ChevronDownFilled } from "@fluentui/react-icons";
 import { createTheme, responsiveFontSizes } from "@mui/material";
 

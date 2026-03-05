@@ -1,11 +1,11 @@
-import { dashboardNavHeight, spacingTokens } from "@/constants/theme";
+import { dashboardNavHeight, spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { LocationDismissRegular, NavigationFilled } from "@fluentui/react-icons";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Avatar from "./Avatar";
 import Notification from "./Notification";
 import { Crumb } from "@/components/shared";
-import { useCurrentRoute } from "@/hooks/config/route";
+import { useCurrentRoute } from "@/lib/route";
 import { useState } from "react";
 import { ThemeToggleButton } from "@/components/ui";
 

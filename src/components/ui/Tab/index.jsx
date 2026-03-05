@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { spacing } from "@/constants/theme";
+import { spacing } from "@/lib/theme";
 
 /**
  * @param {Object} props

@@ -1,4 +1,4 @@
-import { spacing } from "@/constants/theme";
+import { spacing } from "@/lib/theme";
 import { TableRow, TableHead as RootTableHead, TableCell, Stack } from "@mui/material";
 
 /**

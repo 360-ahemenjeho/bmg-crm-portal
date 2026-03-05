@@ -1,5 +1,5 @@
 import { Checkbox } from "@/components/ui";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { CheckmarkCircleFilled } from "@fluentui/react-icons";
 import { Stack, Typography } from "@mui/material";

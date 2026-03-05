@@ -1,4 +1,4 @@
-import { radiusTokens, spacingTokens } from "@/constants/theme";
+import { radiusTokens, spacingTokens } from "@/lib/theme";
 import { Stack } from "@mui/material";
 import Checklist from "./Checklist";
 import Reminders from "./Reminders";

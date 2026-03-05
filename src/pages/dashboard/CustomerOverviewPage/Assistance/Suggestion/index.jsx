@@ -1,4 +1,4 @@
-import { radiusTokens, spacingTokens } from "@/constants/theme";
+import { radiusTokens, spacingTokens } from "@/lib/theme";
 import { Stack } from "@mui/material";
 import { Typography } from "@/components/ui";
 import useColor from "@/contexts/color/useColor";

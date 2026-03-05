@@ -1,4 +1,4 @@
-import { actionSizes, spacingTokens, radius, fontSizes } from "@/constants/theme";
+import { actionSizes, spacingTokens, radius, fontSizes } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { Box } from "@mui/material";
 

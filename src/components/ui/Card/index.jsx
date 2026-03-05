@@ -1,4 +1,4 @@
-import { radius } from "@/constants/theme";
+import { radius } from "@/lib/theme";
 import { Card as BaseCard } from "@mui/material";
 
 /**

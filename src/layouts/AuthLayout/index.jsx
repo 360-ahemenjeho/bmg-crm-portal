@@ -1,5 +1,5 @@
-import { ThemeToggleButton, Typography } from "@/components/ui";
-import { radius, spacingTokens } from "@/constants/theme";
+import { ThemeToggleButton } from "@/components/ui";
+import { radius, spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { Box, Stack } from "@mui/material";
 import { useState } from "react";
@@ -48,15 +48,6 @@ export default function AuthLayout() {
               onClick={navigateToHome}
             />
           </Stack>
-
-          <Box>
-            <Typography variant="h1" lineHeight={1.5} fontWeight={500}>
-              Sell Smarter. Connect Better.
-            </Typography>
-            <Typography color="secondary" fontWeight={300} variant="h3" lineHeight={1.25}>
-              Your deals, contacts, and insights are waiting.
-            </Typography>
-          </Box>
           <Outlet />
         </Stack>
       </Box>

@@ -1,4 +1,4 @@
-import { radius, spacing } from "@/constants/theme";
+import { radius, spacing } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { Button as BaseButton } from "@mui/material";
 import { MoonLoader } from "react-spinners";

@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import FilterRenderer from "./FilterRenderer";
 
 /**

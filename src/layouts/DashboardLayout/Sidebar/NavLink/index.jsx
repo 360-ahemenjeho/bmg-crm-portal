@@ -1,4 +1,4 @@
-import { radiusTokens, spacing, spacingTokens } from "@/constants/theme";
+import { radiusTokens, spacing, spacingTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { ChevronLeftFilled } from "@fluentui/react-icons";
 import { Box, Stack } from "@mui/material";

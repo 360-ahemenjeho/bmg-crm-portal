@@ -1,5 +1,5 @@
 import { SummaryCard } from "@/components/shared";
-import { spacingTokens } from "@/constants/theme";
+import { spacingTokens } from "@/lib/theme";
 import {
   ChatHelpRegular,
   DesktopSpeakerRegular,

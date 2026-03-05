@@ -1,4 +1,4 @@
-import { dashboardNavHeight, radius, spacing } from "@/constants/theme";
+import { dashboardNavHeight, radius, spacing } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { Box } from "@mui/material";
 

@@ -1,6 +1,6 @@
 import { Button, Tab, Tabs, Typography } from "@/components/ui";
-import { spacingTokens } from "@/constants/theme";
-import { useTab } from "@/hooks/config/tab";
+import { spacingTokens } from "@/lib/theme";
+import { useTab } from "@/lib/tab";
 import { AddFilled } from "@fluentui/react-icons";
 import { Stack } from "@mui/material";
 import { tabs } from "./lib";
