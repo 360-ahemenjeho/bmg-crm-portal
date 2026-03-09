@@ -5,7 +5,7 @@ import { dashboardNavHeight, spacingTokens } from "@/lib/theme";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
-import { AuthMiddleware } from "@/middlewares";
+import { AuthMiddleware } from "@/components/middleware";
 
 export default function DashboardLayout() {
   const { border, bg } = useColor();
