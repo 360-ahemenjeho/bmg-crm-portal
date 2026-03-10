@@ -3,7 +3,7 @@ import axios from "axios";
 import { notification } from "./notification";
 
 export const api = axios.create({
-  baseURL: "http://localhost:4000/V1/api",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true,
 });
 
@@ -28,14 +28,13 @@ api.interceptors.response.use(
     }
 
     if (status === 401) {
-      notification.error("Session expired. Login again. 😬");
-
       const { clearAuth } = useAuthStore.getState();
       clearAuth();
 
       if (window.location.pathname !== "/login") {
         window.location.href = "/login";
       }
+      notification.error("Session expired. Login again. 😬");
     }
 
     if (status === 403) {

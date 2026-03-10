@@ -8,25 +8,40 @@ import {
   InvoicePage,
   LeadsPage,
   QuotationPage,
+  PlatformAdminsPage,
   TasksPage,
 } from "@/pages/dashboard";
 import { CompanyAccountPage, VendorAccountPage } from "@/pages/settings";
+import { useAuthStore } from "@/store/auth";
 import { Routes as BaseRoutes, Route } from "react-router-dom";
 
 export default function Routes() {
-  const AUTHENTICATED_USER = /** @type {"CUSTOMER" | "ADMIN"} */ ("CUSTOMER");
+  const { permission } = useAuthStore.getState();
+  const ROLE = permission?.role_id;
+  const SUB_ROLE = permission?.subrole_id;
+
+  console.log("Role");
+  console.log(ROLE);
+
+  console.log("sUB Role");
+  console.log(SUB_ROLE);
+
+  console.log("Is Platform Admin?");
+  console.log(ROLE == 1 && SUB_ROLE == 1);
 
   return (
     <BaseRoutes>
       <Route element={<DashboardLayout />}>
         <Route path="/design/system" element={<DesignSystemPage />} />
-        {AUTHENTICATED_USER === "ADMIN" && (
+        {/* PLATFORM SUPER ADMIN */}
+        {ROLE == 1 && SUB_ROLE == 1 && (
           <>
             <Route path="/" element={<AdminOverviewPage />} />
+            <Route path="/admins" element={<PlatformAdminsPage />} />
           </>
         )}
 
-        {AUTHENTICATED_USER === "CUSTOMER" && (
+        {ROLE === "CUSTOMER" && (
           <>
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/" element={<CustomerOverviewPage />} />

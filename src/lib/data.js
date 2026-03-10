@@ -6,6 +6,7 @@ import {
   ReceiptRegular,
   TargetRegular,
   TextQuoteFilled,
+  PersonStarRegular,
 } from "@fluentui/react-icons";
 
 /** @type {Record<string, import("@mui/material").ChipProps["color"]>} */
@@ -66,4 +67,12 @@ export const namedRoutes = {
     label: "Company",
     icon: BuildingRegular,
   },
+  "/admins": {
+    label: "Admins",
+    icon: PersonStarRegular,
+  },
+};
+/** @type {any} */
+export const ROLES = {
+  "1:1": "platform_super_admin",
 };
