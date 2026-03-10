@@ -35,7 +35,9 @@ export function buildQuery({ filters, page, search } = {}) {
       if (value != null && value !== "") query.set(key, String(value));
     });
   }
-  return query.toString();
+  console.log("Query ");
+  console.log(query.toString());
+  return query.toString() ? `?${query.toString()}` : "";
 }
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────

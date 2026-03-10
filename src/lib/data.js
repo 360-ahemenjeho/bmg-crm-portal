@@ -60,4 +60,5 @@ export const namedRoutes = {
 /** @type {any} */
 export const ROLES = {
   "1:1": "platform_super_admin",
+  "2:17": "customer",
 };

@@ -54,7 +54,7 @@ export default function ModalLayout({
           sx={{
             padding: `${spacing[py]} ${spacing[px]}`,
             maxHeight: overflowVisible ? "none" : "60vh",
-            overflowY: overflowVisible ? "visible" : "hidden",
+            overflowY: overflowVisible ? "visible" : "auto",
           }}
         >
           {children}

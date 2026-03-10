@@ -2,7 +2,7 @@ import { useNotification } from "@/contexts/notification";
 import { api } from "@/lib/api";
 import { useRequest } from "@/lib/request";
 import { useAuthStore } from "@/store/auth";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 
 export function useLogin() {
@@ -18,8 +18,8 @@ export function useLogin() {
       const responseData = response.data;
       if (responseData?.success && responseData?.result?.token) {
         const result = responseData?.result;
-        console.log("Login result ");
-        console.log(result);
+        console.log("Results");
+        console.log(responseData);
         setAuth({ user: result?.user, token: result?.token, permission: result?.permissions });
         notify.success("Login successful! 🥳");
         navigate("/");
@@ -104,8 +104,6 @@ export function useVerifyPasswordReset() {
       {
         onError: (error) => {
           const responseData = error?.response?.data;
-          console.log("Reset password response data");
-          console.log(responseData);
 
           if (responseData?.error == 3) {
             notify.error("Code has expired! Enter your email. 🫩");
@@ -122,4 +120,34 @@ export function useVerifyPasswordReset() {
   });
 
   return { loading, verifyPasswordReset };
+}
+
+/**
+ *
+ * @param {number} id
+ */
+export function useGetRoleSubRoles(id) {
+  const { request } = useRequest();
+  const { isPending: loading, data } = useQuery({
+    queryKey: ["role_sub_roles", id],
+    queryFn: request(async function () {
+      const response = await api.get(`/permissions/get_all_roles/permission?role_id=${id}`);
+      const responseData = response.data;
+
+      console.log("Roles response");
+      console.log(responseData);
+
+      if (responseData?.success && responseData?.result) {
+        return responseData.result;
+      }
+
+      return [];
+    }),
+    enabled: !!id,
+  });
+
+  return {
+    loading,
+    data,
+  };
 }

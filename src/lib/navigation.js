@@ -44,13 +44,14 @@ export function useNavigationMenu() {
   /** @type {any} */
   const menu = {
     platform_super_admin: [
-      { label: "Overview", path: "/", icon: GlanceRegular },
-      { label: "Admins", path: "/admins", icon: PersonStarRegular },
-      { label: "Settings", path: "/settings", icon: SettingsRegular },
+      { label: "Overview", path: "/", icon: GlanceRegular, color: "#00FF5E" },
+      { label: "Admins", path: "/admins", icon: PersonStarRegular, color: "#fb00ff" },
+      { label: "Settings", path: "/settings", icon: SettingsRegular, color: "#05A6F0" },
     ],
     customer: [
       { label: "Overview", path: "/", icon: GlanceRegular },
       { label: "Tasks", path: "/tasks", icon: TextBulletListSquareRegular, color: "#00FF5E" },
+      { label: "Companies", path: "/companies", icon: BuildingRegular, color: "#fb00ff" },
       {
         label: "Team",
         path: "/team",

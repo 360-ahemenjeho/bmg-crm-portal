@@ -17,15 +17,6 @@ export default function Routes() {
   const ROLE = permission?.role_id;
   const SUB_ROLE = permission?.subrole_id;
 
-  console.log("Role");
-  console.log(ROLE);
-
-  console.log("sUB Role");
-  console.log(SUB_ROLE);
-
-  console.log("Is Platform Admin?");
-  console.log(ROLE == 1 && SUB_ROLE == 1);
-
   return (
     <BaseRoutes>
       <Route element={<DashboardLayout />}>
@@ -38,7 +29,7 @@ export default function Routes() {
           </>
         )}
 
-        {ROLE === "CUSTOMER" && (
+        {ROLE == 2 && SUB_ROLE == 17 && (
           <>
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/" element={<CustomerOverviewPage />} />

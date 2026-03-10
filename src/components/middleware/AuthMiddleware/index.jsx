@@ -1,6 +1,7 @@
 import { useNotification } from "@/contexts/notification";
 import { useAuthStore } from "@/store/auth";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 /**
  * @param {Object} props
@@ -9,15 +10,14 @@ import { useEffect } from "react";
 export default function AuthMiddleware({ children }) {
   const { token } = useAuthStore.getState();
   const notify = useNotification();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!token) {
+      navigate("/login");
       notify.info("Login to continue!");
-      if (window.location.pathname !== "/login") {
-        window.location.href = "/login";
-      }
     }
-  }, [token, window.location.pathname]);
+  }, [token, navigate]);
 
   return children;
 }

@@ -9,23 +9,22 @@ import {
   MailRegular,
   PersonBoardRegular,
   PersonCircleRegular,
+  ShieldRegular,
 } from "@fluentui/react-icons";
 import { Stack } from "@mui/material";
 import { useForm } from "@/lib/form";
 import { rules } from "./lib";
 import { PulseLoader } from "react-spinners";
 import { useEffect, useState } from "react";
+import { useGetCountries } from "@/queries/country";
+import { useGetRoleSubRoles } from "@/queries/auth";
 
 /**
- * @typedef {Object} Props
- * @property {Array<any>} countries
- * @property {boolean} countriesLoading
+ * @param {import("@/types/global.d").ModalConfig} props
  */
-
-/**
- * @param {import("@/types/global.d").ModalConfig & Props} props
- */
-export default function AddAdminModal({ open, onClose, countries, countriesLoading }) {
+export default function AddAdminModal({ open, onClose }) {
+  const { data: countries, loading: countriesLoading } = useGetCountries();
+  const { data: subRoles, loading: subRolesLoading } = useGetRoleSubRoles(1);
   const { onBlur, onChange, formData, formErrors, validateForm } = useForm({
     init: {
       first_name: "",
@@ -41,12 +40,16 @@ export default function AddAdminModal({ open, onClose, countries, countriesLoadi
 
   async function handleSubmit() {
     if (!validateForm()) return;
+    const req = { ...formData, role_id: 1 };
+    console.log(req);
   }
 
   useEffect(() => {
     if (formData?.country_id) {
       setSelectedCountry(
-        countries?.find((currentCountry) => currentCountry?.id == formData?.country_id),
+        countries?.find(
+          (/** @type {any} */ currentCountry) => currentCountry?.id == formData?.country_id,
+        ),
       );
     }
   }, [formData?.country_id]);
@@ -58,7 +61,13 @@ export default function AddAdminModal({ open, onClose, countries, countriesLoadi
       title="Admin+"
       actionSlot={
         <>
-          <Button size="small" round={0} color="secondary" startContent={<DismissRegular />}>
+          <Button
+            size="small"
+            round={0}
+            color="secondary"
+            onClick={onClose}
+            startContent={<DismissRegular />}
+          >
             Cancel
           </Button>
           <Button
@@ -103,7 +112,7 @@ export default function AddAdminModal({ open, onClose, countries, countriesLoadi
           onBlur={(name, value) => onBlur(name, value)}
         />
         <Select
-          startAdornment={countriesLoading ? <PulseLoader /> : <FlagRegular />}
+          startAdornment={countriesLoading ? <PulseLoader size={10} /> : <FlagRegular />}
           name="country_id"
           label="Country"
           value={(name) => formData?.[name]}
@@ -132,6 +141,21 @@ export default function AddAdminModal({ open, onClose, countries, countriesLoadi
           error={(name) => formErrors?.[name]}
           onChange={(name, value) => onChange(name, value)}
           onBlur={(name, value) => onBlur(name, value)}
+        />
+        <Select
+          startAdornment={countriesLoading ? <PulseLoader size={10} /> : <ShieldRegular />}
+          name="subrole_id"
+          label="Role"
+          value={(name) => formData?.[name]}
+          error={(name) => formErrors?.[name]}
+          onChange={(name, value) => onChange(name, value)}
+          onBlur={(name, value) => onBlur(name, value)}
+          options={subRoles}
+          disabled={subRolesLoading || !subRoles || subRoles?.length < 1}
+          renderOption={(option) => ({
+            label: option?.name,
+            value: option?.id,
+          })}
         />
       </Stack>
     </ModalLayout>
