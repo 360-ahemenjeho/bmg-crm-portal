@@ -1,2 +1,3 @@
 export { default as TaskMiniCard } from "./TaskMiniCard";
 export { default as AddTaskModal } from "./AddTaskModal";
+export { default as IntegrationCard } from "./IntegrationCard";

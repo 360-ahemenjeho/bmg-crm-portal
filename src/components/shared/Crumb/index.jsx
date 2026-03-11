@@ -46,12 +46,13 @@ export default function Crumb({ active, nav, height = dashboardNavHeight }) {
           gap: spacing[1],
           "& > *": {
             color: active ? main.primary : fg.primary,
-            fontSize: "11px",
           },
         }}
       >
-        {nav.icon && <nav.icon style={{ display: "block" }}></nav.icon>}
-        <span style={{ lineHeight: 1 }}>{nav?.label}</span>
+        {nav.icon && <nav.icon fontSize={16} style={{ display: "block" }}></nav.icon>}
+        <Box component="span" fontSize="11px" style={{ lineHeight: 1 }}>
+          {nav?.label}
+        </Box>
       </Box>
     </Box>
   );

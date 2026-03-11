@@ -264,6 +264,7 @@ function configureTheme({
             "&.MuiInputBase-multiline": {
               height: "auto",
               padding: inputPadding.x,
+              alignItems: "start",
             },
             "& fieldset": {
               borderColor: input["outlined"]["default"]["border"],
@@ -324,6 +325,7 @@ function configureTheme({
             gap: spacingTokens.sm,
             "&.MuiInputBase-multiline": {
               height: "auto",
+              alignItems: "start",
               padding: inputPadding.x,
             },
             backgroundColor: input["filled"]["default"]["bg"],
@@ -622,13 +624,13 @@ function configureTheme({
         styleOverrides: {
           root: {
             width: "fit-content",
-            height: "21px",
+            height: "18px",
             fontWeight: 500,
             boxShadow: shadow.default,
-            fontSize: "13px",
+            fontSize: "12px",
             borderRadius: spacingTokens.xs,
             "& .MuiChip-icon": {
-              fontSize: "18px",
+              fontSize: "16px",
               lineHeight: 1,
             },
             "&.MuiChip-outlined": {

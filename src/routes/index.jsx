@@ -5,6 +5,7 @@ import {
   CompaniesPage,
   CustomerOverviewPage,
   DesignSystemPage,
+  IntegrationsPage,
   PlatformAdminsPage,
   TasksPage,
 } from "@/pages/dashboard";
@@ -34,6 +35,7 @@ export default function Routes() {
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/" element={<CustomerOverviewPage />} />
             <Route path="/companies" element={<CompaniesPage />} />
+            <Route path="/integrations" element={<IntegrationsPage />} />
           </>
         )}
       </Route>

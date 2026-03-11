@@ -4,6 +4,7 @@ import {
   GlanceRegular,
   PersonRegular,
   PersonStarRegular,
+  CircleSparkleRegular,
 } from "@fluentui/react-icons";
 
 /** @type {Record<string, import("@mui/material").ChipProps["color"]>} */
@@ -55,6 +56,10 @@ export const namedRoutes = {
   "/admins": {
     label: "Admins",
     icon: PersonStarRegular,
+  },
+  "/integrations": {
+    label: "Integrations",
+    icon: CircleSparkleRegular,
   },
 };
 /** @type {any} */

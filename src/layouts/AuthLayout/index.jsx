@@ -5,6 +5,8 @@ import { Box, Stack } from "@mui/material";
 import { useState } from "react";
 import { Outlet, useNavigate } from "react-router";
 
+const LOGO_HEIGHT = "40px";
+
 export default function AuthLayout() {
   const navigate = useNavigate();
   const { bg, main, theme: mode, toggleTheme } = useColor();
@@ -44,11 +46,18 @@ export default function AuthLayout() {
             <Box
               component="img"
               src={isDark ? "/logo-dark.png" : "logo-dark.png"}
-              sx={{ height: "40px", cursor: "pointer" }}
+              sx={{ height: LOGO_HEIGHT, cursor: "pointer" }}
               onClick={navigateToHome}
             />
           </Stack>
-          <Outlet />
+          <Stack
+            sx={{
+              maxHeight: `calc(100svh - ${spacingTokens.lg} - ${LOGO_HEIGHT})`,
+              overflowY: "auto",
+            }}
+          >
+            <Outlet />
+          </Stack>
         </Stack>
       </Box>
       <Box

@@ -22,7 +22,7 @@ export default function ModalLayout({
   open,
   onClose,
   children,
-  round = 0,
+  round = 9,
   width,
   overflowVisible = false,
   py = 3,

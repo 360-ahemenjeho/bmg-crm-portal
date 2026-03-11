@@ -54,15 +54,13 @@ export default function TriggerButton({
         borderLeft: resolvedBorderLeft,
         borderRadius: radius[round],
         width: fullWidth ? "100%" : "fit-content",
-        "& *": {
-          fontFamily: fontSizes.body1,
-        },
+        fontFamily: fontSizes.body1,
         "&:hover": {
           backgroundColor: onClick ? input.outlined.default.bg : "transparent",
         },
       }}
     >
-      {Icon && <Icon color={accent || input.outlined.default.placeholder} />}
+      {Icon && <Icon fontSize={18} color={accent || input.outlined.default.placeholder} />}
       {(label || placeholder) && (
         <Box
           component="span"
