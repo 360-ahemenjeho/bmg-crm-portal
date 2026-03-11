@@ -17,6 +17,7 @@ import React from "react";
  * @param {string} [props.title]
  * @param {string} [props.caption]
  * @param {React.ReactNode} [props.actionSlot]
+ * @param {boolean} [props.enableDefaultClose]
  */
 export default function ModalLayout({
   open,
@@ -30,10 +31,11 @@ export default function ModalLayout({
   title,
   caption,
   actionSlot,
+  enableDefaultClose = false,
 }) {
   const { shadow, bg, border } = useColor();
   return (
-    <BaseModal open={open} onClose={onClose}>
+    <BaseModal open={open} onClose={enableDefaultClose ? undefined : onClose}>
       <Box
         sx={{
           position: "absolute",

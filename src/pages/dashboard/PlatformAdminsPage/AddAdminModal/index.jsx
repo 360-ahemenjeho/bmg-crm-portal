@@ -63,7 +63,6 @@ export default function AddAdminModal({ open, onClose }) {
         <>
           <Button
             size="small"
-            round={0}
             color="secondary"
             onClick={onClose}
             startContent={<DismissRegular />}
@@ -74,7 +73,6 @@ export default function AddAdminModal({ open, onClose }) {
             onClick={handleSubmit}
             disabled={countriesLoading}
             size="small"
-            round={0}
             startContent={<AddRegular />}
           >
             Submit

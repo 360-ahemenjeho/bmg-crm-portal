@@ -500,7 +500,7 @@ function configureTheme({
               "& .MuiFormControlLabel-label": {
                 fontWeight: 400,
                 lineHeight: 1,
-                marginLeft: spacingTokens.md,
+                marginLeft: spacingTokens.sm,
                 color: fg.primary,
                 fontSize: fontSizes.body1,
               },
@@ -537,7 +537,7 @@ function configureTheme({
               backgroundColor: menu.bg,
               border: `1px solid ${menu.border}`,
               color: fg.primary,
-              borderRadius: radiusTokens.md,
+              borderRadius: radiusTokens.lg,
               padding: spacingTokens.xs,
               boxShadow: "none",
             },
@@ -562,7 +562,7 @@ function configureTheme({
             color: menuItem["default"]["fg"],
             padding: `${spacing[2]} ${spacing[3]}`,
             borderBottom: "none",
-            borderRadius: radius[3],
+            borderRadius: radiusTokens.md,
             fontWeight: 400,
             "&:hover": {
               backgroundColor: menuItem["hover"]["bg"],

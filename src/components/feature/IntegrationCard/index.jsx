@@ -1,7 +1,7 @@
 import { Chip, Typography } from "@/components/ui";
 import { useColor } from "@/contexts/color";
 import { radiusTokens, spacingTokens } from "@/lib/theme";
-import { SparkleRegular } from "@fluentui/react-icons";
+import { SparkleRegular, TextAsteriskRegular } from "@fluentui/react-icons";
 import { Box, Stack } from "@mui/material";
 
 /**
@@ -10,19 +10,27 @@ import { Box, Stack } from "@mui/material";
  * @param {string} props.name
  * @param {string} props.description
  * @param {Array<"hot" | "vital">} [props.tags]
+ * @param {() => void} props.onClick
  */
-export default function IntegrationCard({ imageUrl, name, description, tags }) {
+export default function IntegrationCard({ imageUrl, name, description, tags, onClick }) {
   const { theme } = useColor();
 
   /** @type {Record<string, import("@mui/material").ChipProps["color"]>} */
-  const tagColors = {
+  const colors = {
     hot: "success",
     vital: "error",
   };
 
+  const icons = {
+    hot: SparkleRegular,
+    vital: TextAsteriskRegular,
+  };
+
   return (
     <Stack
+      component="div"
       gap={spacingTokens.sm}
+      onClick={onClick}
       sx={{
         border: `1px solid ${theme === "light" ? "rgba(0, 0, 0, 0.07)" : "rgba(255, 255, 255, 0.07)"}`,
         backgroundColor: theme === "light" ? "rgba(0, 0, 0, 0.03)" : "rgba(255, 255, 255, 0.03)",
@@ -38,15 +46,12 @@ export default function IntegrationCard({ imageUrl, name, description, tags }) {
     >
       <Stack direction="row" alignItems="start" justifyContent="space-between">
         <Box component="img" src={imageUrl} height="20px" />
-        {tags?.map((tag, index) => (
-          <Chip
-            key={index}
-            icon={<SparkleRegular />}
-            label={tag}
-            color={tagColors[tag]}
-            variant="outlined"
-          />
-        ))}
+        {tags?.map((tag, index) => {
+          const Icon = icons[tag];
+          return (
+            <Chip key={index} icon={<Icon />} label={tag} color={colors[tag]} variant="outlined" />
+          );
+        })}
       </Stack>
       <Stack gap={spacingTokens.xs}>
         <Typography
