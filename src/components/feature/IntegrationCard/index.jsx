@@ -1,6 +1,7 @@
 import { Chip, Typography } from "@/components/ui";
 import { useColor } from "@/contexts/color";
 import { radiusTokens, spacingTokens } from "@/lib/theme";
+import { SparkleRegular } from "@fluentui/react-icons";
 import { Box, Stack } from "@mui/material";
 
 /**
@@ -38,7 +39,13 @@ export default function IntegrationCard({ imageUrl, name, description, tags }) {
       <Stack direction="row" alignItems="start" justifyContent="space-between">
         <Box component="img" src={imageUrl} height="20px" />
         {tags?.map((tag, index) => (
-          <Chip key={index} label={tag} color={tagColors[tag]} variant="outlined" />
+          <Chip
+            key={index}
+            icon={<SparkleRegular />}
+            label={tag}
+            color={tagColors[tag]}
+            variant="outlined"
+          />
         ))}
       </Stack>
       <Stack gap={spacingTokens.xs}>
