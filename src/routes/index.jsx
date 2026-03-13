@@ -1,4 +1,6 @@
+import { AuthMiddleware } from "@/components/middleware";
 import { AuthLayout, DashboardLayout, SettingsLayout } from "@/layouts";
+import { useCheckPublicRoute } from "@/lib/route";
 import { ResetPasswordPage, LoginPage, RegisterPage, VerifyEmailPage } from "@/pages/auth";
 import {
   AdminOverviewPage,
@@ -16,10 +18,11 @@ import { Routes as BaseRoutes, Route } from "react-router-dom";
 
 export default function Routes() {
   const { permission } = useAuthStore.getState();
+  const isPublicRoute = useCheckPublicRoute();
   // const ROLE = permission?.role_name;
   const ROLE = "WORKSPACE_USER";
 
-  return (
+  const routes = (
     <BaseRoutes>
       <Route element={<DashboardLayout />}>
         <Route path="/design/system" element={<DesignSystemPage />} />
@@ -57,4 +60,6 @@ export default function Routes() {
       </Route>
     </BaseRoutes>
   );
+
+  return isPublicRoute ? routes : <AuthMiddleware>{routes}</AuthMiddleware>;
 }

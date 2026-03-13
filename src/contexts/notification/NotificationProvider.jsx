@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import NotificationStack from "./NotificationStack";
 import NotificationContext from "./NotificationContext";
 import { setNotifier } from "@/lib/notification";
@@ -38,23 +38,59 @@ export default function NotificationProvider({ children }) {
         priority,
       };
 
-      setNotifications((prev) => {
-        const newArray = [...prev, notification];
-        newArray.sort((a, b) => (b.priority || 0) - (a.priority || 0) || b.id - a.id);
-        return newArray;
-      });
+      setNotifications((prev) =>
+        [...prev, notification].sort(
+          (a, b) => (b.priority || 0) - (a.priority || 0) || b.id - a.id,
+        ),
+      );
     },
     [],
   );
 
+  const success = useCallback(
+    /**
+     * @param {string} msg
+     * @param {import('@/types/global.d').NotificationOptions} [options]
+     */
+    (msg, options) => notify(msg, "success", options),
+    [notify],
+  );
+  const error = useCallback(
+    /**
+     * @param {string} msg
+     * @param {import('@/types/global.d').NotificationOptions} [options]
+     */
+    (msg, options) => notify(msg, "error", options),
+    [notify],
+  );
+  const warning = useCallback(
+    /**
+     * @param {string} msg
+     * @param {import('@/types/global.d').NotificationOptions} [options]
+     */
+    (msg, options) => notify(msg, "warning", options),
+    [notify],
+  );
+  const info = useCallback(
+    /**
+     * @param {string} msg
+     * @param {import('@/types/global.d').NotificationOptions} [options]
+     */
+    (msg, options) => notify(msg, "info", options),
+    [notify],
+  );
+
   /** @type {import('@/types/global.d').NotificationAPI} */
-  const value = {
-    notify,
-    success: (msg, options) => notify(msg, "success", options),
-    error: (msg, options) => notify(msg, "error", options),
-    warning: (msg, options) => notify(msg, "warning", options),
-    info: (msg, options) => notify(msg, "info", options),
-  };
+  const value = useMemo(
+    () => ({
+      notify,
+      success,
+      error,
+      warning,
+      info,
+    }),
+    [notify, success, error, warning, info],
+  );
 
   useEffect(() => {
     setNotifier(value);

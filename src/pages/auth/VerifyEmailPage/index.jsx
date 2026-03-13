@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { rules } from "./lib";
 import { useVerifyEmail } from "@/queries/auth";
+import { notification } from "@/lib/notification";
 
 export default function VerifyEmailPage() {
   const [params] = useSearchParams();
@@ -31,8 +32,8 @@ export default function VerifyEmailPage() {
     rules: () => rules,
   });
 
-  function goToLogin() {
-    navigate("/login");
+  function resentCode() {
+    notification.info("Code resent! Please check your email. 🙂");
   }
 
   async function handleSubmit() {
@@ -51,15 +52,15 @@ export default function VerifyEmailPage() {
           </Button>
 
           <Box component="p" m={0} p={0} fontSize={fontSizes.caption} color={fg.primary}>
-            Have an account?{" "}
+            Need another code?{" "}
             <Box
               component="span"
               fontWeight={500}
               color={main.primary}
-              onClick={goToLogin}
+              onClick={resentCode}
               sx={{ textDecoration: "underline", cursor: "pointer" }}
             >
-              Go to Login
+              Resend
             </Box>
           </Box>
         </>
@@ -76,7 +77,7 @@ export default function VerifyEmailPage() {
       />
       <Input
         label="Code"
-        name="token"
+        name="otp"
         type="text"
         value={(name) => formData[name]}
         onChange={(name, value) => onChange(name, value)}

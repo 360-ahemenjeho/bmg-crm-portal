@@ -1,9 +1,9 @@
+import { namedRoutes, publicRoutes } from "@/lib/constants";
+import { matchPath, useLocation } from "react-router-dom";
+
 /**
  * @typedef {(typeof namedRoutes)[keyof typeof namedRoutes]} RouteName
  */
-
-import { namedRoutes } from "@/lib/data";
-import { matchPath, useLocation } from "react-router-dom";
 
 /**
  * @param {string} pathname
@@ -39,3 +39,10 @@ export function useCurrentRoute() {
     isCurrentRoute,
   };
 }
+
+export const useCheckPublicRoute = () => {
+  const location = useLocation();
+  const currPath = location.pathname;
+  const isPublic = publicRoutes.some((route) => matchPath({ path: route, end: true }, currPath));
+  return isPublic;
+};

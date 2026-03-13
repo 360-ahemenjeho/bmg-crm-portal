@@ -1,5 +1,5 @@
 import { FileInput, FileStatus, Input } from "@/components/ui";
-import { FILE_UNITS } from "@/lib/data";
+import { FILE_UNITS } from "@/lib/constants";
 
 /**
  * @param {Object} props

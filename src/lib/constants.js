@@ -74,3 +74,5 @@ export const namedRoutes = {
     icon: PlugDisconnectedRegular,
   },
 };
+
+export const publicRoutes = ["/login", "/register", "/password/reset", "/email/verification"];

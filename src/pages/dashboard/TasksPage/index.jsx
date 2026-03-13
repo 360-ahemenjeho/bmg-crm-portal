@@ -2,7 +2,7 @@ import { AddTaskModal } from "@/components/feature";
 import { ActionButton } from "@/components/shared";
 import { Toolbar } from "@/components/shared";
 import { Avatar, Button, Checkbox, Chip, Table, TableBody, TableHead } from "@/components/ui";
-import { TASK_PRIORITY_VARIANT, TASK_STATUS_VARIANT } from "@/lib/data";
+import { TASK_PRIORITY_VARIANT, TASK_STATUS_VARIANT } from "@/lib/constants";
 import { spacingTokens } from "@/lib/theme";
 import { renderDateTime } from "@/helpers/date";
 import { renderText } from "@/helpers/text";
