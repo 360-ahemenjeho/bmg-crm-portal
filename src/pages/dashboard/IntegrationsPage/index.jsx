@@ -82,7 +82,7 @@ export default function IntegrationsPage() {
             tags={["hot"]}
             connected={false}
             onClick={() => {
-              navigate("/meta-ads/connect");
+              navigate("/meta-ads/account");
             }}
           />
         </Box>

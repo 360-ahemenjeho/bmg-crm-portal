@@ -1,6 +1,8 @@
 export {};
 
-/** @typedef {{ path: string, color?: string, label?: string, icon: React.ComponentType<{ fontSize?: number, style?: Record<string, any> }>, sub?: Array<{ path: string, label?: string, icon: React.ComponentType<{ fontSize?: number, style?: Record<string, any> }> }> }} NavItem */
+/** @typedef {React.ComponentType<{ fontSize?: number, style?: Record<string, any>, color?: string }>} Icon */
+
+/** @typedef {{ path: string, color?: string, label?: string, icon: Icon, sub?: Array<{ path: string, label?: string, icon: React.ComponentType<{ fontSize?: number, style?: Record<string, any> }> }> }} NavItem */
 /** @typedef {{label: string, key: number }} Tab */
 
 /**

@@ -5,4 +5,6 @@ export { default as CustomerOverviewPage } from "./CustomerOverviewPage";
 export { default as CompaniesPage } from "./CompaniesPage";
 export { default as PlatformAdminsPage } from "./PlatformAdminsPage";
 export { default as IntegrationsPage } from "./IntegrationsPage";
-export { default as ConnectMetaAddsPage } from "./ConnectMetaAddsPage";
+export { default as MetaAdsPageAccount } from "./MetaAdsPageAccount";
+export { default as MetaAdCampaignsPage } from "./MetaAdCampaignsPage";
+export { default as MetaAdCampaignDetailsPage } from "./MetaAdCampaignDetailsPage";

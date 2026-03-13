@@ -69,9 +69,8 @@ export default function IntegrationCard({ imageUrl, name, description, tags, onC
       <Stack gap={spacingTokens.xs}>
         <Typography
           variant="body1"
-          fontWeight={600}
+          fontWeight={500}
           sx={{
-            textDecoration: "underline",
             userSelect: "none",
           }}
         >

@@ -1,16 +1,17 @@
-import { AuthMiddleware } from "@/components/middleware";
 import { AuthLayout, DashboardLayout, SettingsLayout } from "@/layouts";
 import { useCheckPublicRoute } from "@/lib/route";
 import { ResetPasswordPage, LoginPage, RegisterPage, VerifyEmailPage } from "@/pages/auth";
 import {
   AdminOverviewPage,
   CompaniesPage,
-  ConnectMetaAddsPage,
+  MetaAdsPageAccount,
   CustomerOverviewPage,
   DesignSystemPage,
   IntegrationsPage,
   PlatformAdminsPage,
   TasksPage,
+  MetaAdCampaignsPage,
+  MetaAdCampaignDetailsPage,
 } from "@/pages/dashboard";
 import { CompanyAccountPage, VendorAccountPage } from "@/pages/settings";
 import { useAuthStore } from "@/store/auth";
@@ -40,7 +41,9 @@ export default function Routes() {
             <Route path="/" element={<CustomerOverviewPage />} />
             <Route path="/companies" element={<CompaniesPage />} />
             <Route path="/integrations" element={<IntegrationsPage />} />
-            <Route path="/meta-ads/connect" element={<ConnectMetaAddsPage />} />
+            <Route path="/meta-ads/account" element={<MetaAdsPageAccount />} />
+            <Route path="/meta-ads/campaigns" element={<MetaAdCampaignsPage />} />
+            <Route path="/meta-ads/campaign/:id/details" element={<MetaAdCampaignDetailsPage />} />
           </>
         )}
       </Route>
@@ -61,5 +64,6 @@ export default function Routes() {
     </BaseRoutes>
   );
 
-  return isPublicRoute ? routes : <AuthMiddleware>{routes}</AuthMiddleware>;
+  // return isPublicRoute ? routes : <AuthMiddleware>{routes}</AuthMiddleware>;
+  return routes;
 }

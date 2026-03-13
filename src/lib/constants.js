@@ -5,7 +5,8 @@ import {
   PersonRegular,
   PersonStarRegular,
   CircleSparkleRegular,
-  PlugDisconnectedRegular,
+  PersonStarburstRegular,
+  MegaphoneLoudRegular,
 } from "@fluentui/react-icons";
 
 /** @type {Record<string, import("@mui/material").ChipProps["color"]>} */
@@ -69,9 +70,17 @@ export const namedRoutes = {
     label: "Integrations",
     icon: CircleSparkleRegular,
   },
-  "/meta-ads/connect": {
-    label: "Connect Meta Ads",
-    icon: PlugDisconnectedRegular,
+  "/meta-ads/account": {
+    label: "Meta Account",
+    icon: PersonStarburstRegular,
+  },
+  "/meta-ads/campaigns": {
+    label: "Campaigns",
+    icon: MegaphoneLoudRegular,
+  },
+  "/meta-ads/campaign/:id/details": {
+    label: "Campaign Details",
+    icon: MegaphoneLoudRegular,
   },
 };
 

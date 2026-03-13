@@ -94,8 +94,8 @@ export default function RegisterPage() {
 
   return (
     <AuthSlot
-      title="Start Growing Your Business."
-      subtitle="The magic starts from here."
+      title="Grow Your Business."
+      subtitle="The magic begins here."
       actions={
         <>
           <Button size="large" onClick={handleSubmit} loading={loading}>
