@@ -2,25 +2,16 @@ import { Box, Stack } from "@mui/material";
 import StepCard from "./StepCard";
 import { spacingTokens } from "@/lib/theme";
 import Connect from "./Connect";
-import { Typography } from "@/components/ui";
 import { useSearchParams } from "react-router-dom";
 import Account from "./Account";
 
-export default function MetaAdsPageAccount() {
+export default function MetaAdsAccountPage() {
   const [params] = useSearchParams();
   const isConnected = params.get("connection") === "true";
   const hasDefaultAdAccount = isConnected;
 
   return (
     <Stack gap={spacingTokens.xl}>
-      <Stack gap={spacingTokens.xs}>
-        <Typography variant="h1" fontWeight={600} color="secondary">
-          Easy 🥳
-        </Typography>
-        <Typography color="tertiary">
-          Connect your Meta Ads account in just few steps and start growing your business today.
-        </Typography>
-      </Stack>
       <Box
         gap={spacingTokens.lg}
         display="grid"

@@ -32,7 +32,7 @@ export default function ProfileCard({
   ];
 
   return (
-    <Card variant="outlined" round={11}>
+    <Card round={11}>
       <Stack
         gap={spacingTokens.lg}
         py={{ xs: spacingTokens.md, md: spacingTokens.lg }}

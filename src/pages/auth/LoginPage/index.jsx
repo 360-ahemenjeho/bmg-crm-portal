@@ -29,7 +29,10 @@ export default function LoginPage() {
 
   async function handleSubmit() {
     if (!validateForm()) return;
-    await login(filterObj(formData));
+    const response = await login(filterObj(formData));
+    if (response && response === "UNVERIFIED") {
+      navigate(`/email/verification?account=${encodeURIComponent(formData?.email)}`);
+    }
   }
 
   function goToPasswordReset() {

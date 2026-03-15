@@ -4,7 +4,7 @@ import { ResetPasswordPage, LoginPage, RegisterPage, VerifyEmailPage } from "@/p
 import {
   AdminOverviewPage,
   CompaniesPage,
-  MetaAdsPageAccount,
+  MetaAdsAccountPage,
   CustomerOverviewPage,
   DesignSystemPage,
   IntegrationsPage,
@@ -12,6 +12,8 @@ import {
   TasksPage,
   MetaAdCampaignsPage,
   MetaAdCampaignDetailsPage,
+  MetaAdSetPage,
+  MetaAdsPage,
 } from "@/pages/dashboard";
 import { CompanyAccountPage, VendorAccountPage } from "@/pages/settings";
 import { useAuthStore } from "@/store/auth";
@@ -41,9 +43,11 @@ export default function Routes() {
             <Route path="/" element={<CustomerOverviewPage />} />
             <Route path="/companies" element={<CompaniesPage />} />
             <Route path="/integrations" element={<IntegrationsPage />} />
-            <Route path="/meta-ads/account" element={<MetaAdsPageAccount />} />
+            <Route path="/meta-ads/account" element={<MetaAdsAccountPage />} />
             <Route path="/meta-ads/campaigns" element={<MetaAdCampaignsPage />} />
             <Route path="/meta-ads/campaign/:id/details" element={<MetaAdCampaignDetailsPage />} />
+            <Route path="/meta-ads/set/:id/details" element={<MetaAdSetPage />} />
+            <Route path="/meta-ads/all" element={<MetaAdsPage />} />
           </>
         )}
       </Route>

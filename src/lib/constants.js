@@ -82,6 +82,14 @@ export const namedRoutes = {
     label: "Campaign Details",
     icon: MegaphoneLoudRegular,
   },
+  "/meta-ads/set/:id/details": {
+    label: "Ad Set",
+    icon: MegaphoneLoudRegular,
+  },
+  "/meta-ads/all": {
+    label: "Ads",
+    icon: MegaphoneLoudRegular,
+  },
 };
 
 export const publicRoutes = ["/login", "/register", "/password/reset", "/email/verification"];

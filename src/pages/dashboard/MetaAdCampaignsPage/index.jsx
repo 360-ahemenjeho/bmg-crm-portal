@@ -9,16 +9,17 @@ import {
   CircleRegular,
   CircleSmallFilled,
   CursorRegular,
+  DiversityRegular,
   MegaphoneCircleRegular,
   MegaphoneLoudRegular,
   MoneyRegular,
   PauseRegular,
-  PersonRegular,
   TargetRegular,
   Text12Regular,
 } from "@fluentui/react-icons";
 import { Stack, TableCell, TableRow } from "@mui/material";
 import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const campaigns = [
   {
@@ -99,13 +100,8 @@ const columns = [
 ];
 
 export default function MetaAdCampaignsPage() {
+  const navigate = useNavigate();
   const [filterValues, setFilterValues] = useState({});
-  const [openAdd, setOpenAdd] = useState(false);
-
-  const userOptions = [
-    { name: "Alice", id: "alice" },
-    { name: "Bob", id: "bob" },
-  ];
 
   /** @type {import("@/types/global.d").FilterConfig[]} */
   const filters = [
@@ -138,9 +134,14 @@ export default function MetaAdCampaignsPage() {
     },
     {
       type: "select",
-      key: "user",
-      label: { icon: PersonRegular, label: "Assignee", accent: "#0078D4" },
-      items: userOptions,
+      key: "objective",
+      label: { icon: DiversityRegular, label: "Objective", accent: "#0078D4" },
+      items: [
+        { name: "Awareness", id: "1" },
+        { name: "Engagement", id: "2" },
+        { name: "Traffic", id: "3" },
+        { name: "Convertions", id: "4" },
+      ],
       renderItem: (user) => ({
         label: user.name,
         value: user.id,
@@ -191,7 +192,9 @@ export default function MetaAdCampaignsPage() {
                   <ActionButton variation="edit" onClick={() => console.log("null")}></ActionButton>
                   <ActionButton
                     variation="preview"
-                    onClick={() => console.log("null")}
+                    onClick={() => {
+                      navigate("/meta-ads/campaign/2/details");
+                    }}
                   ></ActionButton>
                   <ActionButton
                     variation="delete"

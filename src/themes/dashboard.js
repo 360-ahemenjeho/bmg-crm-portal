@@ -54,7 +54,7 @@ function configureTheme({
       caption: {
         textTransform: "unset",
         fontSize: fontSizes.caption,
-        lineHeight: 1,
+        lineHeight: 1.5,
         display: "block",
       },
       body1: {
@@ -118,22 +118,22 @@ function configureTheme({
             boxSizing: "border-box",
             gap: spacing[1],
             "&.MuiButton-sizeLarge": {
-              fontSize: "15px",
-              padding: "0.9rem 1.25rem",
+              fontSize: "16px",
+              padding: "0.6rem 1rem",
             },
             "&.MuiButton-sizeLarge.icon": {
               padding: "0.9rem",
             },
             "&.MuiButton-sizeMedium": {
-              fontSize: "14px",
-              padding: "0.6rem 1rem",
+              fontSize: "15px",
+              padding: "0.5rem 1rem",
             },
             "&.MuiButton-sizeMedium.icon": {
               padding: "0.5rem",
             },
             "&.MuiButton-sizeSmall": {
               fontSize: "14px",
-              padding: "0.5rem 1rem",
+              padding: "0.4rem 1rem",
             },
             "&.MuiButton-sizeSmall.icon": {
               padding: "0.3rem",
@@ -451,7 +451,7 @@ function configureTheme({
             backgroundColor: bg.tertiary,
             boxShadow: shadow.soft,
             "&.MuiPaper-outlined": {
-              border: `1px solid ${border.primary}`,
+              border: `1px solid ${border.faint}`,
               boxShadow: "none !important",
             },
           },

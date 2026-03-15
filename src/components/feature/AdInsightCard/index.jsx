@@ -1,6 +1,6 @@
 import { Card, Typography } from "@/components/ui";
 import { spacingTokens } from "@/lib/theme";
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 /**
  * @param {Object} props
@@ -8,17 +8,17 @@ import { Stack } from "@mui/material";
  * @param {string} props.value
  * @param {import("@/types/global.d").Icon} props.icon
  */
-export default function InsightCard({ title, value, icon: Icon }) {
+export default function AdInsightCard({ title, value, icon: Icon }) {
   return (
     <Card>
-      <Stack gap={spacingTokens.md} alignItems="start" py={spacingTokens.md} px={spacingTokens.lg}>
+      <Stack gap={spacingTokens.sm} alignItems="start" py={spacingTokens.sm} px={spacingTokens.lg}>
         <Icon fontSize={22} />
-        <Stack gap={spacingTokens.xs}>
+        <Box>
           <Typography fontWeight={500}>{title}</Typography>
           <Typography color="secondary" variant="caption" sx={{ textOverflow: "ellipsis" }}>
             {value}
           </Typography>
-        </Stack>
+        </Box>
       </Stack>
     </Card>
   );

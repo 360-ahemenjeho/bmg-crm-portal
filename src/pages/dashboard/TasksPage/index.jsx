@@ -271,7 +271,7 @@ export default function TasksPage() {
           onFilterChange={handleFilterChange}
           action={
             <Button onClick={handleAdd} startContent={<AddRegular />}>
-              Task
+              Tasks
             </Button>
           }
         />

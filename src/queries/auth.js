@@ -13,20 +13,29 @@ export function useLogin() {
   const navigate = useNavigate();
 
   const { isPending: loading, mutateAsync: login } = useMutation({
-    mutationFn: request(async function (/**@type {Record<String, string>}*/ data) {
-      const response = await api.post("/auth/login", data);
-      const responseData = response.data;
-      if (responseData?.success && responseData?.result?.token) {
-        const result = responseData?.result;
-        console.log("Results");
-        console.log(responseData);
-        setAuth({ user: result?.user, token: result?.token, permission: result?.permissions });
-        notify.success("Login successful! 🥳");
-        navigate("/");
-        return;
-      }
-      notify.info("Error occured! Try again. ☺️");
-    }),
+    mutationFn: request(
+      async function (/**@type {Record<String, string>}*/ data) {
+        const response = await api.post("/auth/login", data);
+        const responseData = response.data;
+        if (responseData?.success && responseData?.result?.token) {
+          const result = responseData?.result;
+          console.log("Results");
+          console.log(responseData);
+          setAuth({ user: result?.user, token: result?.token, permission: result?.permissions });
+          notify.success("Login successful! 🥳");
+          navigate("/");
+        }
+        notify.info("Error occured! Try again. ☺️");
+      },
+      {
+        onError: (error) => {
+          const data = error?.response?.data;
+          if (data?.error == 3) {
+            return "UNVERIFIED";
+          }
+        },
+      },
+    ),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["profile"] });
     },

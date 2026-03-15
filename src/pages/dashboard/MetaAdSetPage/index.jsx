@@ -13,40 +13,8 @@ import {
   MoneyRegular,
   Text12Regular,
 } from "@fluentui/react-icons";
-import { Stack, TableCell, TableRow, Box } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { TableCell, TableRow, Box, Stack } from "@mui/material";
 import Toolbar from "./Toolbar";
-
-const adSets = [
-  {
-    id: "as-1",
-    name: "North America - Retargeting",
-    status: "Active",
-    budget: 1200,
-    impressions: 142_800,
-    clicks: 5_420,
-    spend: 987.35,
-    cpc: 0.18,
-    cpm: 6.91,
-    startDate: "Mar 01, 2026",
-    endDate: "Mar 30, 2026",
-    optimization: "Link Clicks",
-  },
-  {
-    id: "as-2",
-    name: "EMEA - Prospecting",
-    status: "Paused",
-    budget: 950,
-    impressions: 98_200,
-    clicks: 3_220,
-    spend: 742.1,
-    cpc: 0.23,
-    cpm: 7.56,
-    startDate: "Mar 05, 2026",
-    endDate: "Mar 31, 2026",
-    optimization: "Conversions",
-  },
-];
 
 const ads = [
   {
@@ -85,22 +53,6 @@ const ads = [
 ];
 
 /** @type {Array<import("@/types/global.d").TableColumn>} */
-const adSetColumns = [
-  { label: "Name", icon: Text12Regular },
-  { label: "Status", icon: CircleRegular },
-  { label: "Budget", icon: MoneyRegular },
-  { label: "Impressions", icon: CalendarRegular },
-  { label: "Clicks", icon: CalendarRegular },
-  { label: "Spend", icon: MoneyRegular },
-  { label: "CPC", icon: MoneyRegular },
-  { label: "CPM", icon: MoneyRegular },
-  { label: "Start Date", icon: CalendarRegular },
-  { label: "End Date", icon: CalendarRegular },
-  { label: "Optimization", icon: Text12Regular },
-  { label: "Actions", icon: CircleRegular, align: "left" },
-];
-
-/** @type {Array<import("@/types/global.d").TableColumn>} */
 const adColumns = [
   { label: "Name", icon: Text12Regular },
   { label: "Status", icon: CircleRegular },
@@ -113,11 +65,11 @@ const adColumns = [
   { label: "Actions", icon: CircleRegular, align: "left" },
 ];
 
-export default function MetaAdCampaignDetailsPage() {
-  const navigate = useNavigate();
+export default function MetaAdSetPage() {
   return (
     <Stack gap={spacingTokens.xl}>
       <Toolbar />
+
       <Box
         display="grid"
         gridTemplateColumns={{ xs: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
@@ -128,52 +80,8 @@ export default function MetaAdCampaignDetailsPage() {
         <AdInsightCard title="Total Spend" value="$987.35" icon={CoinMultipleColor} />
         <AdInsightCard title="Average CPC" value="$0.18" icon={ArrowTrendingLinesColor} />
       </Box>
-      <Typography variant="h3" fontWeight={600} color="secondary">
-        Ad Sets
-      </Typography>
-      <Table>
-        <TableHead columns={adSetColumns} />
-        <TableBody loading={false} count={adSets.length} span={adSetColumns.length}>
-          {adSets.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>
-                <Chip
-                  icon={<CircleSmallFilled />}
-                  label={row.status}
-                  color={row.status === "Active" ? "success" : "warning"}
-                  variant="outlined"
-                />
-              </TableCell>
-              <TableCell>{row.budget}</TableCell>
-              <TableCell>{row.impressions}</TableCell>
-              <TableCell>{row.clicks}</TableCell>
-              <TableCell>{row.spend}</TableCell>
-              <TableCell>{row.cpc}</TableCell>
-              <TableCell>{row.cpm}</TableCell>
-              <TableCell>{row.startDate}</TableCell>
-              <TableCell>{row.endDate}</TableCell>
-              <TableCell>{row.optimization}</TableCell>
-              <TableCell align="right">
-                <Stack direction="row" gap={spacingTokens.sm}>
-                  <ActionButton
-                    variation="preview"
-                    onClick={() => {
-                      navigate("/meta-ads/set/2/details");
-                    }}
-                  ></ActionButton>
-                  <ActionButton
-                    variation="delete"
-                    onClick={() => console.log("delete ad set")}
-                  ></ActionButton>
-                </Stack>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
 
-      <Typography variant="h3" fontWeight={600} color="secondary">
+      <Typography variant="h2" fontWeight={600} color="secondary">
         Ads
       </Typography>
       <Table>

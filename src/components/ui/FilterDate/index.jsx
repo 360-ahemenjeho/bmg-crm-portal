@@ -1,7 +1,7 @@
 import { radiusTokens } from "@/lib/theme";
 import { useColor } from "@/contexts/color";
 import { Stack } from "@mui/material";
-import { CalendarRegular, DismissFilled } from "@fluentui/react-icons";
+import { CalendarDateRegular, DismissFilled } from "@fluentui/react-icons";
 import { useRef } from "react";
 import { TriggerButton } from "@/components/ui";
 
@@ -14,8 +14,8 @@ import { TriggerButton } from "@/components/ui";
  */
 export default function FilterDate({ from, to, onFromChange, onToChange }) {
   const { border, fg } = useColor();
-  const fromInputRef = useRef(/** @type {HTMLInputElement | null} */ (null));
-  const toInputRef = useRef(/** @type {HTMLInputElement | null} */ (null));
+  const fromInputRef = useRef(/** @type {HTMLInputElement | null} */(null));
+  const toInputRef = useRef(/** @type {HTMLInputElement | null} */(null));
 
   const handleFromClick = () => {
     fromInputRef.current?.showPicker();
@@ -40,8 +40,15 @@ export default function FilterDate({ from, to, onFromChange, onToChange }) {
       <TriggerButton
         round={0}
         noBorder
+        icon={CalendarDateRegular}
+        accent={fg.secondary}
+        onClick={() => console.log("Hey")}
+        br
+      />
+      <TriggerButton
+        round={0}
+        noBorder
         label={from || "From"}
-        icon={CalendarRegular}
         br
         accent={fg.tertiary}
         onClick={handleFromClick}
@@ -51,7 +58,6 @@ export default function FilterDate({ from, to, onFromChange, onToChange }) {
         round={0}
         noBorder
         label={to || "To"}
-        icon={CalendarRegular}
         br
         accent={fg.tertiary}
         onClick={handleToClick}

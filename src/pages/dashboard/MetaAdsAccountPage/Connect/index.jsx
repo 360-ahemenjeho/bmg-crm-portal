@@ -16,15 +16,15 @@ export default function Connect() {
 
   return (
     <Stack gap={spacingTokens.xl}>
-      <Stack gap={spacingTokens.xs}>
+      <Box>
         <Typography variant="h1" fontWeight={600} color="secondary">
-          Permissions 🛡️
+          Permissions
         </Typography>
         <Typography color="tertiary">
           We only request essential permissions to manage your ads.
         </Typography>
-      </Stack>
-      <Card variant="outlined" round={11}>
+      </Box>
+      <Card round={11}>
         <PermissionCard
           permission="ads_management"
           description="Create and manage your ad campaigns"
@@ -39,7 +39,6 @@ export default function Connect() {
           permission="business_management"
           description="Access your business manager"
           icon={BuildingMultipleColor}
-          noBorder
         />
         <PermissionCard
           permission="pages_show_list"

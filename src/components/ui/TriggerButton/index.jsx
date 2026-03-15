@@ -67,6 +67,7 @@ export default function TriggerButton({
           fontWeight={400}
           color={placeholder && !label ? fg.disabled : input.outlined.default.fg}
           sx={{
+            display: "block",
             whiteSpace: "nowrap",
             userSelect: "none",
             lineHeight: 1,

@@ -18,15 +18,15 @@ export default function Integration({ imageUrl, name, username }) {
       component="div"
       gap={spacingTokens.sm}
       sx={{
-        border: `1px solid ${theme === "light" ? "rgba(0, 0, 0, 0.07)" : "rgba(255, 255, 255, 0.07)"}`,
+        border: `1px solid ${theme === "light" ? "rgba(0, 0, 0, 0.04)" : "rgba(255, 255, 255, 0.04)"}`,
         backgroundColor: theme === "light" ? "rgba(0, 0, 0, 0.03)" : "rgba(255, 255, 255, 0.03)",
         borderRadius: radiusTokens.xl,
         padding: `${spacingTokens.sm} ${spacingTokens.lg}`,
         cursor: "pointer",
         transition: "border 0.35s ease-in-out, background-color 0.35s ease-in-out",
         "&:hover": {
-          border: `1px solid ${theme === "light" ? "rgba(0, 0, 0, 0.1)" : "rgba(255, 255, 255, 0.1)"}`,
-          backgroundColor: theme === "light" ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.06)",
+          border: `1px solid ${theme === "light" ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.06)"}`,
+          backgroundColor: theme === "light" ? "rgba(0, 0, 0, 0.05)" : "rgba(255, 255, 255, 0.06)",
         },
       }}
     >

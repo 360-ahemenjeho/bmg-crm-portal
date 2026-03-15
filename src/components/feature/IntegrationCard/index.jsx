@@ -33,7 +33,7 @@ export default function IntegrationCard({ imageUrl, name, description, tags, onC
       gap={spacingTokens.sm}
       onClick={onClick}
       sx={{
-        border: `1px solid ${connected ? main.success + "26" : theme === "light" ? "rgba(0, 0, 0, 0.07)" : "rgba(255, 255, 255, 0.07)"}`,
+        border: `1px solid ${connected ? main.success + "26" : theme === "light" ? "rgba(0, 0, 0, 0.04)" : "rgba(255, 255, 255, 0.04)"}`,
         backgroundColor: connected
           ? main.success + "0D"
           : theme === "light"
@@ -44,8 +44,8 @@ export default function IntegrationCard({ imageUrl, name, description, tags, onC
         cursor: "pointer",
         transition: "border 0.35s ease-in-out, background-color 0.35s ease-in-out",
         "&:hover": {
-          border: `1px solid ${theme === "light" ? "rgba(0, 0, 0, 0.1)" : "rgba(255, 255, 255, 0.1)"}`,
-          backgroundColor: theme === "light" ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.06)",
+          border: `1px solid ${theme === "light" ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.06)"}`,
+          backgroundColor: theme === "light" ? "rgba(0, 0, 0, 0.05)" : "rgba(255, 255, 255, 0.06)",
         },
       }}
     >

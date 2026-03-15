@@ -1,6 +1,6 @@
-import { Typography } from "@/components/ui";
+import { Card, Typography } from "@/components/ui";
 import { useColor } from "@/contexts/color";
-import { radiusTokens, spacingTokens } from "@/lib/theme";
+import { spacingTokens } from "@/lib/theme";
 import { CheckmarkCircleFilled } from "@fluentui/react-icons";
 import { Stack, Box } from "@mui/material";
 
@@ -13,19 +13,15 @@ import { Stack, Box } from "@mui/material";
  * @param {() => void} [props.onClick]
  */
 export default function StepCard({ label, iconSrc, description, completed = false, onClick }) {
-  const { main, border, bg } = useColor();
+  const { main } = useColor();
 
   return (
     <Stack
-      component="div"
+      component={Card}
       gap={spacingTokens.md}
       onClick={onClick}
       sx={{
-        border: `1px solid ${border.primary}`,
-        backgroundColor: bg.tertiary,
-        borderRadius: radiusTokens.xl,
         padding: `${spacingTokens.sm} ${spacingTokens.lg}`,
-        transition: "border 0.35s ease-in-out, background-color 0.35s ease-in-out",
       }}
     >
       <Stack direction="row" alignItems="start" justifyContent="space-between">

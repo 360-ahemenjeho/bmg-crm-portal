@@ -1,18 +1,20 @@
 import { spacingTokens } from "@/lib/theme";
-import { Divider, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import ProfileCard from "./ProfileCard";
 import { Button, Card, Typography } from "@/components/ui";
 import AdAccount from "./AdAccount";
+import { useNavigate } from "react-router-dom";
 
 export default function Account() {
+  const navigate = useNavigate();
   return (
     <Stack gap={spacingTokens.xl}>
-      <Stack gap={spacingTokens.xs}>
-        <Typography variant="h1" fontWeight={600} color="secondary">
-          Account 🧑‍💼
+      <Box>
+        <Typography variant="h1" fontWeight={600} color="secondary" textAlign="center">
+          Account
         </Typography>
-        <Typography color="tertiary">Meta account connected. Manage Ad accounts.</Typography>
-      </Stack>
+        <Typography color="tertiary" textAlign="center">Meta account connected. Manage Ad accounts.</Typography>
+      </Box>
 
       <ProfileCard
         name="Aondoahemen Abraham"
@@ -21,7 +23,7 @@ export default function Account() {
         connectedDate="23 Dec 2025"
         tokenExpiryDate="17 Aug 2026"
       />
-      <Card variant="outlined" round={11}>
+      <Card round={11}>
         <AdAccount
           name="Jehoshaphat Aondoahemen"
           id="123456789"
@@ -38,7 +40,6 @@ export default function Account() {
           status={false}
           onClick={() => alert("Account selected!")}
         />
-
         <AdAccount
           name="John Smith"
           id="555555555"
@@ -59,10 +60,22 @@ export default function Account() {
         />
       </Card>
 
-      <Divider />
-      <Stack direction="row" alignItems="center" gap={spacingTokens.md}>
-        <Button>Create Ad</Button>
-        <Button color="secondary">View Ads</Button>
+      <Stack direction="row" alignItems="center" justifyContent="center" gap={spacingTokens.md}>
+        <Button
+          onClick={() => {
+            navigate("/meta-ads/all");
+          }}
+        >
+          Create Ad
+        </Button>
+        <Button
+          color="secondary"
+          onClick={() => {
+            navigate("/meta-ads/campaigns");
+          }}
+        >
+          View Ads
+        </Button>
       </Stack>
     </Stack>
   );
